@@ -2,41 +2,53 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lavrfolio</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="favicon.png" type="image/png">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
+  <canvas id="grid-bg"></canvas>
 
-  <header class="nav-buttons">
-    <a href="#about" class="btn-large neon-btn"><i class="fa-solid fa-user"></i> About</a>
-    <a href="#projects" class="btn-large neon-btn"><i class="fa-solid fa-briefcase"></i> Projects</a>
-    <a href="#skills" class="btn-large neon-btn"><i class="fa-solid fa-code"></i> Skills</a>
-    <a href="#hobbies" class="btn-large neon-btn"><i class="fa-solid fa-heart"></i> Hobbies</a>
-    <a href="#contact" class="btn-large neon-btn"><i class="fa-solid fa-envelope"></i> Contact</a>
+  <header>
+    <nav class="nav-links">
+      <a href="#about" class="btn-large neon-btn"><i class="fa-solid fa-user"></i> About</a>
+      <a href="#projects" class="btn-large neon-btn"><i class="fa-solid fa-briefcase"></i> Projects</a>
+      <a href="#skills" class="btn-large neon-btn"><i class="fa-solid fa-code"></i> Skills</a>
+      <a href="#hobbies" class="btn-large neon-btn"><i class="fa-solid fa-heart"></i> Hobbies</a>
+      <a href="#contact" class="btn-large neon-btn"><i class="fa-solid fa-envelope"></i> Contact</a>
+    </nav>
+
+    <div class="burger" id="burger">
+      <span></span><span></span><span></span>
+    </div>
   </header>
 
   <section id="lavr" class="video-banner">
     <div class="banner-text center-align">
-      <h1 id="typed-text" class="typed"></h1>
+      <h1 id="typed-text" class="typed neon-text"></h1>
     </div>
   </section>
 
-  <div class="content">
+  <main class="content">
     <section id="about" class="section-spacing container">
       <div class="ide-card">
-        <div class="ide-header"><span class="red-dot"></span><span class="yellow-dot"></span><span
-            class="green-dot"></span></div>
+        <div class="ide-header">
+          <span class="red-dot"></span><span class="yellow-dot"></span><span class="green-dot"></span>
+        </div>
         <div class="ide-body white-text">
           <div class="row valign-wrapper">
-            <div class="col s3"><img src="assets/profile_picture.png" alt="profile_image" class="circle responsive-img"></div>
+            <div class="col s3">
+              <img src="assets/profile_picture.png" alt="profile_image" class="circle responsive-img" />
+            </div>
             <div class="col s9">
               <p class="code-line">const name = "<span class="var">Anatoliy</span>";</p>
               <p class="code-line">let role = "<span class="fn">Web Developer</span>";</p>
@@ -50,35 +62,32 @@
 
     <section id="projects" class="section-spacing row">
       <h2 class="center-align neon-text">Projects</h2>
+
       <div class="col s12 m4">
         <div class="ide-card project">
-          <div class="ide-header"><span class="red-dot"></span><span class="yellow-dot"></span><span
-              class="green-dot"></span></div>
+          <div class="ide-header"><span class="red-dot"></span><span class="yellow-dot"></span><span class="green-dot"></span></div>
           <div class="ide-body">
-            <p class="code-line">repo: <a href="https://github.com/AnatoliyLavrentiev/Logex" target="_blank"
-                class="link">Logex</a></p>
+            <p class="code-line">repo: <a href="https://github.com/AnatoliyLavrentiev/Logex" target="_blank" class="link">Logex</a></p>
             <p class="code-line">stack: [PHP, Symfony]</p>
           </div>
         </div>
       </div>
+
       <div class="col s12 m4">
         <div class="ide-card project">
-          <div class="ide-header"><span class="red-dot"></span><span class="yellow-dot"></span><span
-              class="green-dot"></span></div>
+          <div class="ide-header"><span class="red-dot"></span><span class="yellow-dot"></span><span class="green-dot"></span></div>
           <div class="ide-body">
-            <p class="code-line">repo: <a href="https://github.com/AnatoliyLavrentiev/Gestion-Commerciale_dwwm2024"
-                target="_blank" class="link">Gestion Commerciale</a></p>
+            <p class="code-line">repo: <a href="https://github.com/AnatoliyLavrentiev/Gestion-Commerciale_dwwm2024" target="_blank" class="link">Gestion Commerciale</a></p>
             <p class="code-line">stack: [PHP, SQL]</p>
           </div>
         </div>
       </div>
+
       <div class="col s12 m4">
         <div class="ide-card project">
-          <div class="ide-header"><span class="red-dot"></span><span class="yellow-dot"></span><span
-              class="green-dot"></span></div>
+          <div class="ide-header"><span class="red-dot"></span><span class="yellow-dot"></span><span class="green-dot"></span></div>
           <div class="ide-body">
-            <p class="code-line">repo: <a href="https://github.com/AnatoliyLavrentiev/Lavrfolio" target="_blank"
-                class="link">Lavrfolio</a></p>
+            <p class="code-line">repo: <a href="https://github.com/AnatoliyLavrentiev/Lavrfolio" target="_blank" class="link">Lavrfolio</a></p>
             <p class="code-line">stack: [HTML, CSS, JS]</p>
           </div>
         </div>
@@ -87,66 +96,36 @@
 
     <section id="skills" class="section-spacing row center-align">
       <h2 class="neon-text">Skills</h2>
-      <div class="col s12 m6">
-        <div class="ide-card skill">
-          <p class="code-line">&lt;HTML5 / CSS3&gt;</p>
-        </div>
-      </div>
-      <div class="col s12 m6">
-        <div class="ide-card skill">
-          <p class="code-line">const js = true;</p>
-        </div>
-      </div>
-      <div class="col s12 m6">
-        <div class="ide-card skill">
-          <p class="code-line">db.query(SQL)</p>
-        </div>
-      </div>
-      <div class="col s12 m6">
-        <div class="ide-card skill">
-          <p class="code-line">php artisan</p>
-        </div>
-      </div>
+      <div class="col s12 m6"><div class="ide-card skill"><p class="code-line">&lt;HTML5 / CSS3&gt;</p></div></div>
+      <div class="col s12 m6"><div class="ide-card skill"><p class="code-line">const js = true;</p></div></div>
+      <div class="col s12 m6"><div class="ide-card skill"><p class="code-line">db.query(SQL)</p></div></div>
+      <div class="col s12 m6"><div class="ide-card skill"><p class="code-line">php artisan</p></div></div>
     </section>
 
     <section id="hobbies" class="section-spacing row center-align">
       <h2 class="neon-text">Hobbies</h2>
-      <div class="carousel carousel-slider">
-        <a class="carousel-item" href="#one!"><img src="assets/hobbies_1.jpg" alt="hobby1"></a>
-        <a class="carousel-item" href="#two!"><img src="assets/hobbies_2.jpg" alt="hobby2"></a>
-        <a class="carousel-item" href="#three!"><img src="assets/hobbies_3.jpg" alt="hobby3"></a>
-        <a class="carousel-item" href="#four!"><img src="assets/hobbies_4.jpg" alt="hobby4"></a>
+      <div class="carousel carousel-slider center">
+        <a class="carousel-item" href="#one!"><div class="carousel-image-wrapper"><img src="assets/hobbies_1.jpg" alt="hobby1"></div></a>
+        <a class="carousel-item" href="#two!"><div class="carousel-image-wrapper"><img src="assets/hobbies_2.jpg" alt="hobby2"></div></a>
+        <a class="carousel-item" href="#three!"><div class="carousel-image-wrapper"><img src="assets/hobbies_3.jpg" alt="hobby3"></div></a>
+        <a class="carousel-item" href="#four!"><div class="carousel-image-wrapper"><img src="assets/hobbies_4.jpg" alt="hobby4"></div></a>
       </div>
     </section>
 
     <section id="contact" class="section-spacing row">
       <h3 class="col s12 center-align neon-text">Contact</h3>
       <form id="contactForm" class="col s12 m8 offset-m2">
-        <div class="row">
-          <div class="input-field col s6"><input type="text" id="lastname" class="validate white-text"><label
-              for="lastname">Lastname</label></div>
-          <div class="input-field col s6"><input type="text" id="firstname" class="validate white-text"><label
-              for="firstname">Firstname</label></div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12"><input type="email" id="email" class="validate white-text"><label
-              for="email">Email</label></div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12"><textarea id="message" class="materialize-textarea white-text"
-              placeholder="Your message"></textarea></div>
-        </div>
-        <div class="row center-align"><button class="btn waves-effect waves-light neon-btn" type="submit"><i
-              class="material-icons">send</i></button></div>
+        <div class="input-field"><input type="text" id="firstname" class="validate white-text" /><label for="firstname">Firstname</label></div>
+        <div class="input-field"><input type="email" id="email" class="validate white-text" /><label for="email">Email</label></div>
+        <div class="input-field"><textarea id="message" class="materialize-textarea white-text" placeholder="Your message"></textarea></div>
+        <div class="center-align"><button class="btn neon-btn" type="submit"><i class="fa-solid fa-paper-plane"></i></button></div>
       </form>
     </section>
-  </div>
+  </main>
 
-  <footer class="section-spacing center-align">
-    <a href="https://github.com/AnatoliyLavrentiev" target="_blank" class="neon-btn" style="margin:0 10px;"><i
-        class="fa-brands fa-github"></i> GitHub</a>
-    <a href="https://www.linkedin.com/in/anatoliy-lavrentiev/" target="_blank" class="neon-btn"
-      style="margin:0 10px;"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+  <footer class="center-align">
+    <a href="https://github.com/AnatoliyLavrentiev" target="_blank" class="neon-btn"><i class="fa-brands fa-github"></i> GitHub</a>
+    <a href="https://www.linkedin.com/in/anatoliy-lavrentiev/" target="_blank" class="neon-btn"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
   </footer>
 
   <button id="scrollTopBtn"><i class="fa-solid fa-arrow-up"></i></button>
@@ -180,6 +159,76 @@
         window.location.href = mailtoLink;
         form.reset();
       });
+
+      const faders = document.querySelectorAll('.ide-card, .skill, .project, footer, .section-spacing h2, .section-spacing h3');
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+      }, { threshold: 0.2 });
+      faders.forEach(el => {
+        el.classList.add('fade-in');
+        observer.observe(el);
+      });
+
+      const canvas = document.getElementById('grid-bg');
+      const ctx = canvas.getContext('2d');
+      let w, h, t = 0;
+
+      function resize() {
+        w = canvas.width = window.innerWidth;
+        h = canvas.height = window.innerHeight;
+      }
+      window.addEventListener('resize', resize);
+      resize();
+
+      function draw() {
+        ctx.clearRect(0, 0, w, h);
+        ctx.strokeStyle = 'rgba(0,255,157,0.15)';
+        ctx.lineWidth = 1;
+
+        const gridSize = 40;
+        for (let x = -w; x < w * 2; x += gridSize) {
+          const offsetY = Math.sin((x + t) * 0.005) * 10;
+          ctx.beginPath();
+          ctx.moveTo(x - (t % gridSize), 0);
+          ctx.lineTo(x - (t % gridSize), h);
+          ctx.stroke();
+          ctx.beginPath();
+          ctx.moveTo(0, x + offsetY);
+          ctx.lineTo(w, x + offsetY);
+          ctx.stroke();
+        }
+
+        t += 0.5;
+        requestAnimationFrame(draw);
+      }
+      draw();
+
+      canvas.style.position = 'fixed';
+      canvas.style.top = 0;
+      canvas.style.left = 0;
+      canvas.style.zIndex = 0;
+      canvas.style.width = '100%';
+      canvas.style.height = '100%';
+      canvas.style.pointerEvents = 'none';
+
+      const burger = document.getElementById('burger');
+      const nav = document.querySelector('.nav-links');
+
+      burger.addEventListener('click', () => {
+        burger.classList.toggle('active');
+        nav.classList.toggle('open');
+      });
+
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+          burger.classList.remove('active');
+          nav.classList.remove('open');
+        });
+      });
+
+
     });
   </script>
 </body>
