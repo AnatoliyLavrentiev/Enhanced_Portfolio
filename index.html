@@ -3,8 +3,12 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lavrfolio</title>
+  <title>Anatoliy Lavrentiev | Web Developer Portfolio</title>
+  <meta name="description"
+    content="Portfolio of Anatoliy Lavrentiev, Web Developer. Projects include Logex, Job Board, Gestion Commerciale, Lavrfolio. Skills in PHP, Symfony, React, Node.js, Next.js, Java, HTML, CSS, JS.">
+  <meta name="keywords"
+    content="Web Developer, Portfolio, PHP, Symfony, React, Node.js, Next.js, Java, HTML, CSS, JS, Job Board, Logex">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
@@ -19,135 +23,333 @@
   <canvas id="grid-bg"></canvas>
 
   <header>
-    <nav class="nav-links">
-      <a href="#about" class="btn-large neon-btn"><i class="fa-solid fa-user"></i> About</a>
-      <a href="#projects" class="btn-large neon-btn"><i class="fa-solid fa-briefcase"></i> Projects</a>
-      <a href="#skills" class="btn-large neon-btn"><i class="fa-solid fa-code"></i> Skills</a>
-      <a href="#hobbies" class="btn-large neon-btn"><i class="fa-solid fa-heart"></i> Hobbies</a>
-      <a href="#contact" class="btn-large neon-btn"><i class="fa-solid fa-envelope"></i> Contact</a>
+    <nav class="nav-links" role="navigation" aria-label="Main Navigation">
+      <a href="#about" class="btn-large neon-btn"><i class="fa-solid fa-user"></i> <b
+          data-i18n="nav.about">About</b></a>
+      <a href="#projects" class="btn-large neon-btn"><i class="fa-solid fa-briefcase"></i> <b
+          data-i18n="nav.projects">Projects</b></a>
+      <a href="#skills" class="btn-large neon-btn"><i class="fa-solid fa-code"></i><b
+          data-i18n="nav.skills">Skills</b></a>
+      <a href="#hobbies" class="btn-large neon-btn"><i class="fa-solid fa-heart"></i> <b
+          data-i18n="nav.hobbies">Hobbies</b></a>
+      <a href="#contact" class="btn-large neon-btn"><i class="fa-solid fa-envelope"></i> <b
+          data-i18n="nav.contact">Contact</b></a>
     </nav>
 
-    <div class="burger" id="burger">
+    <button id="themeToggle" class="neon-btn" aria-label="Toggle Theme"><i class="fa-solid fa-sun"></i></button>
+    <button id="langToggle" class="neon-btn" aria-label="Toggle Language"><i class="fa-solid fa-globe"></i></button>
+
+    <div class="burger" id="burger" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </div>
   </header>
 
-  <section id="lavr" class="video-banner">
+  <section id="lavr" class="video-banner" role="banner">
     <div class="banner-text center-align">
-      <h1 id="typed-text" class="typed neon-text"></h1>
+      <h1 id="typed-text" class="typed neon-text" data-i18n="typed.greeting"></h1>
     </div>
   </section>
 
   <main class="content">
-    <section id="about" class="section-spacing container">
-      <div class="ide-card">
+    <section id="about" class="section-spacing container" aria-labelledby="about-title">
+      <h2 id="about-title" class="visually-hidden">About Me</h2>
+      <article class="ide-card">
         <div class="ide-header">
           <span class="red-dot"></span><span class="yellow-dot"></span><span class="green-dot"></span>
         </div>
-        <div class="ide-body white-text">
+        <div class="ide-body">
           <div class="row valign-wrapper">
             <div class="col s3">
-              <img src="assets/profile_picture.png" alt="profile_image" class="circle responsive-img" />
+              <img src="assets/profile_picture.png" alt="Portrait of Anatoliy Lavrentiev"
+                class="circle responsive-img" />
             </div>
             <div class="col s9">
               <p class="code-line">const name = "<span class="var">Anatoliy</span>";</p>
               <p class="code-line">let role = "<span class="fn">Web Developer</span>";</p>
               <p class="code-line">skills.upgrade(<span class="kw">true</span>);</p>
-              <a href="CV.pdf" download class="btn neon-btn">downloadCV();</a>
+              <a href="CV.pdf" download class="btn neon-btn" data-i18n="button.cv" title="Download CV">downloadCV();</a>
             </div>
           </div>
         </div>
-      </div>
+      </article>
+
+      <article class="ide-card log-card">
+        <div class="ide-header">
+          <span class="red-dot"></span><span class="yellow-dot"></span><span class="green-dot"></span>
+          <span class="ide-title">&lt;developer.log&gt;</span>
+        </div>
+        <div class="ide-body">
+          <p class="code-line comment" data-i18n="log.comment">// My learning journey and skill progress</p>
+          <p class="code-line" data-i18n="log.line1">console.log("<span class='str'>J’ai commencé à apprendre le code
+              lors de ma formation Développeur Web et Web Mobile (Titre Professionnel de niveau 5) de juillet 2024 à
+              avril 2025.</span>");</p>
+          <p class="code-line" data-i18n="log.line2">console.log("<span class='str'>Bases étudiées : MySQL, PostgreSQL,
+              HTML, CSS, JavaScript, PHP (framework Symfony). Projet final développé avec Symfony.</span>");</p>
+          <p class="code-line" data-i18n="log.line3">console.log("<span class='str'>Aujourd’hui à Epitech : migration
+              vers Linux, consolidation des bases, nouvelles compétences en Python, et création du projet Job Board avec
+              PostgreSQL et Next.js.</span>");</p>
+        </div>
+      </article>
     </section>
 
-    <section id="projects" class="section-spacing row">
-      <h2 class="center-align neon-text">Projects</h2>
-
-      <div class="col s12 m4">
-        <div class="ide-card project">
-          <div class="ide-header"><span class="red-dot"></span><span class="yellow-dot"></span><span class="green-dot"></span></div>
+    <section id="projects" class="section-spacing" aria-labelledby="projects-title">
+      <h2 id="projects-title" class="center-align neon-text" data-i18n="section.projects">Projects</h2>
+      <div class="projects-container">
+        <article class="ide-card project">
+          <div class="ide-header"><span class="red-dot"></span><span class="yellow-dot"></span><span
+              class="green-dot"></span></div>
           <div class="ide-body">
-            <p class="code-line">repo: <a href="https://github.com/AnatoliyLavrentiev/Logex" target="_blank" class="link">Logex</a></p>
+            <p class="code-line">repo: <a href="https://github.com/AnatoliyLavrentiev/Logex" target="_blank"
+                class="link" rel="noopener noreferrer" title="Logex GitHub Repository">Logex</a></p>
             <p class="code-line">stack: [PHP, Symfony]</p>
           </div>
-        </div>
-      </div>
+        </article>
 
-      <div class="col s12 m4">
-        <div class="ide-card project">
-          <div class="ide-header"><span class="red-dot"></span><span class="yellow-dot"></span><span class="green-dot"></span></div>
+        <article class="ide-card project">
+          <div class="ide-header"><span class="red-dot"></span><span class="yellow-dot"></span><span
+              class="green-dot"></span></div>
           <div class="ide-body">
-            <p class="code-line">repo: <a href="https://github.com/AnatoliyLavrentiev/Gestion-Commerciale_dwwm2024" target="_blank" class="link">Gestion Commerciale</a></p>
+            <p class="code-line">repo: <a href="https://github.com/AnatoliyLavrentiev/job_board_deploy" target="_blank"
+                class="link" rel="noopener noreferrer" title="Job Board GitHub Repository">Job Board</a></p>
+            <p class="code-line">stack: [React, Node.js, PostgreSQL]</p>
+          </div>
+        </article>
+
+        <article class="ide-card project">
+          <div class="ide-header"><span class="red-dot"></span><span class="yellow-dot"></span><span
+              class="green-dot"></span></div>
+          <div class="ide-body">
+            <p class="code-line">repo: <a href="https://github.com/AnatoliyLavrentiev/Gestion-Commerciale_dwwm2024"
+                target="_blank" class="link" rel="noopener noreferrer"
+                title="Gestion Commerciale GitHub Repository">Gestion Commerciale</a></p>
             <p class="code-line">stack: [PHP, SQL]</p>
           </div>
-        </div>
-      </div>
+        </article>
 
-      <div class="col s12 m4">
-        <div class="ide-card project">
-          <div class="ide-header"><span class="red-dot"></span><span class="yellow-dot"></span><span class="green-dot"></span></div>
+        <article class="ide-card project">
+          <div class="ide-header"><span class="red-dot"></span><span class="yellow-dot"></span><span
+              class="green-dot"></span></div>
           <div class="ide-body">
-            <p class="code-line">repo: <a href="https://github.com/AnatoliyLavrentiev/Lavrfolio" target="_blank" class="link">Lavrfolio</a></p>
+            <p class="code-line">repo: <a href="https://github.com/AnatoliyLavrentiev/Lavrfolio" target="_blank"
+                class="link" rel="noopener noreferrer" title="Lavrfolio GitHub Repository">Lavrfolio</a></p>
             <p class="code-line">stack: [HTML, CSS, JS]</p>
           </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" class="section-spacing row center-align" aria-labelledby="skills-title">
+      <h2 id="skills-title" class="neon-text" data-i18n="section.skills">Skills</h2>
+      <div class="col s12 m6">
+        <div class="ide-card skill">
+          <p class="code-line">&lt;HTML5 / CSS3&gt;</p>
+        </div>
+      </div>
+      <div class="col s12 m6">
+        <div class="ide-card skill">
+          <p class="code-line">const js = true;</p>
+        </div>
+      </div>
+      <div class="col s12 m6">
+        <div class="ide-card skill">
+          <p class="code-line">db.query(SQL)</p>
+        </div>
+      </div>
+      <div class="col s12 m6">
+        <div class="ide-card skill">
+          <p class="code-line">php bin/console</p>
+        </div>
+      </div>
+      <div class="col s12 m6">
+        <div class="ide-card skill">
+          <p class="code-line">import Next from 'next'</p>
+        </div>
+      </div>
+      <div class="col s12 m6">
+        <div class="ide-card skill">
+          <p class="code-line">public class JavaApp {}</p>
         </div>
       </div>
     </section>
 
-    <section id="skills" class="section-spacing row center-align">
-      <h2 class="neon-text">Skills</h2>
-      <div class="col s12 m6"><div class="ide-card skill"><p class="code-line">&lt;HTML5 / CSS3&gt;</p></div></div>
-      <div class="col s12 m6"><div class="ide-card skill"><p class="code-line">const js = true;</p></div></div>
-      <div class="col s12 m6"><div class="ide-card skill"><p class="code-line">db.query(SQL)</p></div></div>
-      <div class="col s12 m6"><div class="ide-card skill"><p class="code-line">php artisan</p></div></div>
-    </section>
+    <section id="hobbies" class="section-spacing" aria-labelledby="hobbies-title">
+      <h2 id="hobbies-title" class="center-align neon-text" data-i18n="section.hobbies">Hobbies</h2>
+      <div class="carousel-container">
+        <div class="carousel-wrapper">
+          <div class="carousel-track">
+            <div class="carousel-slide"><img src="assets/hobbies_1.jpg" alt="Cooking" /></div>
+            <div class="carousel-slide"><img src="assets/hobbies_2.jpg" alt="Drums" /></div>
+            <div class="carousel-slide"><img src="assets/hobbies_3.jpg" alt="Hiking" /></div>
+            <div class="carousel-slide"><img src="assets/hobbies_4.jpg" alt="Running" /></div>
+          </div>
+        </div>
+        <span class="carousel-btn prev" aria-label="Previous">&#10094;</span>
+        <span class="carousel-btn next" aria-label="Next">&#10095;</span>
 
-    <section id="hobbies" class="section-spacing row center-align">
-      <h2 class="neon-text">Hobbies</h2>
-      <div class="carousel carousel-slider center">
-        <a class="carousel-item" href="#one!"><div class="carousel-image-wrapper"><img src="assets/hobbies_1.jpg" alt="hobby1"></div></a>
-        <a class="carousel-item" href="#two!"><div class="carousel-image-wrapper"><img src="assets/hobbies_2.jpg" alt="hobby2"></div></a>
-        <a class="carousel-item" href="#three!"><div class="carousel-image-wrapper"><img src="assets/hobbies_3.jpg" alt="hobby3"></div></a>
-        <a class="carousel-item" href="#four!"><div class="carousel-image-wrapper"><img src="assets/hobbies_4.jpg" alt="hobby4"></div></a>
       </div>
     </section>
 
-    <section id="contact" class="section-spacing row">
-      <h3 class="col s12 center-align neon-text">Contact</h3>
+    <section id="contact" class="section-spacing row" aria-labelledby="contact-title">
+      <h3 id="contact-title" class="col s12 center-align neon-text" data-i18n="section.contact">Contact</h3>
       <form id="contactForm" class="col s12 m8 offset-m2">
-        <div class="input-field"><input type="text" id="firstname" class="validate white-text" /><label for="firstname">Firstname</label></div>
-        <div class="input-field"><input type="email" id="email" class="validate white-text" /><label for="email">Email</label></div>
-        <div class="input-field"><textarea id="message" class="materialize-textarea white-text" placeholder="Your message"></textarea></div>
-        <div class="center-align"><button class="btn neon-btn" type="submit"><i class="fa-solid fa-paper-plane"></i></button></div>
+        <div class="input-field">
+          <input type="text" id="firstname" class="validate white-text" required />
+          <label for="firstname" data-i18n="form.firstname">Firstname</label>
+        </div>
+        <div class="input-field">
+          <input type="text" id="lastname" class="validate white-text" required />
+          <label for="lastname" data-i18n="form.lastname">Lastname</label>
+        </div>
+        <div class="input-field">
+          <input type="email" id="email" class="validate white-text" required />
+          <label for="email" data-i18n="form.email">Email</label>
+        </div>
+        <div class="input-field">
+          <textarea id="message" class="materialize-textarea white-text" placeholder="Your message"
+            data-i18n-placeholder="form.message" required></textarea>
+        </div>
+        <div class="center-align">
+          <button class="btn neon-btn" type="submit" aria-label="Send Message">
+            <i class="fa-solid fa-paper-plane"></i>
+            <span data-i18n="form.send">Send</span>
+          </button>
+        </div>
       </form>
     </section>
   </main>
 
-  <footer class="center-align">
-    <a href="https://github.com/AnatoliyLavrentiev" target="_blank" class="neon-btn"><i class="fa-brands fa-github"></i> GitHub</a>
-    <a href="https://www.linkedin.com/in/anatoliy-lavrentiev/" target="_blank" class="neon-btn"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+  <footer class="center-align" role="contentinfo">
+    <a href="https://github.com/AnatoliyLavrentiev" target="_blank" class="neon-btn" rel="noopener noreferrer"
+      title="Anatoliy's GitHub"><i class="fa-brands fa-github"></i> GitHub</a>
+    <a href="https://www.linkedin.com/in/anatoliy-lavrentiev/" target="_blank" class="neon-btn"
+      rel="noopener noreferrer" title="Anatoliy's LinkedIn"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
   </footer>
 
-  <button id="scrollTopBtn"><i class="fa-solid fa-arrow-up"></i></button>
+  <button id="scrollTopBtn" aria-label="Scroll to Top"><i class="fa-solid fa-arrow-up"></i></button>
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      M.Carousel.init(document.querySelectorAll('.carousel'), { fullWidth: true, indicators: true });
 
-      const text = ["> Hello, I'm Anatoliy", "> Web Developer | Coding Enthusiast"];
-      let line = 0, char = 0;
+
+
+      const track = document.querySelector(".carousel-track");
+      const slides = Array.from(track.children);
+      const nextButton = document.querySelector(".carousel-btn.next");
+      const prevButton = document.querySelector(".carousel-btn.prev");
+      let currentIndex = 0;
+
+      function updateCarousel() {
+        const offset = -currentIndex * 100;
+        track.style.transform = `translateX(${offset}%)`;
+      }
+
+      nextButton.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateCarousel();
+      });
+
+      prevButton.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateCarousel();
+      });
+
+
       const typedText = document.getElementById("typed-text");
+
+      const translations = {
+        en: {
+          "about.title": "About Me",
+          "log.comment": "<span class='comment'>// My learning journey and skill progress</span>",
+          "log.line1": "console.log(<span class='var'>\"I started learning to code during my Web and Mobile Web Developer training (Level 5 Professional Title) from July 2024 to April 2025.\"</span>);",
+          "log.line2": "console.log(<span class='var'>\"Learned fundamentals: MySQL, PostgreSQL, HTML, CSS, JavaScript, PHP (Symfony framework). Final project developed with Symfony.\"</span>);",
+          "log.line3": "console.log(<span class='var'>\"Now at Epitech: switched to Linux, refreshed my front-end stack, started Python, and built a Job Board project with PostgreSQL and Next.js.\"</span>);",
+          "typed.greeting": ["> Hello, I'm Anatoliy > Web Developer | Coding Enthusiast"],
+          "nav.about": "About",
+          "nav.projects": "Projects",
+          "nav.skills": "Skills",
+          "nav.hobbies": "Hobbies",
+          "nav.contact": "Contact",
+          "section.projects": "Projects",
+          "section.skills": "Skills",
+          "section.hobbies": "Hobbies",
+          "section.contact": "Contact",
+          "form.firstname": "Firstname",
+          "form.lastname": "Lastname",
+          "form.email": "Email",
+          "form.message": "Your message",
+          "form.send": "Send",
+          "button.cv": "downloadCV();"
+        },
+        fr: {
+          "about.title": "À propos de moi",
+          "log.comment": "<span class='comment'>// Mon parcours d'apprentissage et progression des compétences</span>",
+          "log.line1": "console.log(<span class='var'>\"J’ai commencé à apprendre le code lors de ma formation Développeur Web et Web Mobile (Titre Professionnel de niveau 5) de juillet 2024 à avril 2025.\"</span>);",
+          "log.line2": "console.log(<span class='var'>\"Bases étudiées : MySQL, PostgreSQL, HTML, CSS, JavaScript, PHP (framework Symfony). Projet final développé avec Symfony.\"</span>);",
+          "log.line3": "console.log(<span class='var'>\"Aujourd’hui à Epitech : passage à Linux, consolidation des bases, nouvelles compétences en Python, et création du projet Job Board avec PostgreSQL et Next.js.\"</span>);",
+          "typed.greeting": ["> Bonjour, je suis Anatoliy > Développeur Web | Passionné de code"],
+          "nav.about": "À propos",
+          "nav.projects": "Projets",
+          "nav.skills": "Compétences",
+          "nav.hobbies": "Loisirs",
+          "nav.contact": "Contact",
+          "section.projects": "Projets",
+          "section.skills": "Compétences",
+          "section.hobbies": "Loisirs",
+          "section.contact": "Contact",
+          "form.firstname": "Prénom",
+          "form.lastname": "Nom",
+          "form.email": "E-mail",
+          "form.message": "Votre message",
+          "form.send": "Envoyer",
+          "button.cv": "téléchargerCV();"
+        }
+      };
+
+      let currentLang = localStorage.getItem('lang') || 'en';
+
+
+      let line = 0, char = 0;
+      let text = translations[currentLang]["typed.greeting"][0].split(" > ");
+
       function type() {
         if (line < text.length) {
-          if (char < text[line].length) { typedText.innerHTML += text[line].charAt(char); char++; setTimeout(type, 100); }
-          else { typedText.innerHTML += "<br>"; line++; char = 0; setTimeout(type, 600); }
+          if (char < text[line].length) {
+            typedText.innerHTML += text[line].charAt(char);
+            char++;
+            setTimeout(type, 100);
+          } else {
+            typedText.innerHTML += "<br>";
+            line++;
+            char = 0;
+            setTimeout(type, 600);
+          }
         }
       }
-      type();
+
+      function startTyping(lang) {
+        text = translations[lang]["typed.greeting"][0].split(" > ");
+        typedText.style.transition = "opacity 0.3s ease";
+        typedText.style.opacity = 0;
+        setTimeout(() => {
+          typedText.innerHTML = "";
+          line = 0;
+          char = 0;
+          typedText.style.opacity = 1;
+          type();
+        }, 300);
+      }
+
+      startTyping(currentLang);
+
 
       const scrollBtn = document.getElementById("scrollTopBtn");
-      window.onscroll = function () { scrollBtn.style.display = (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) ? "block" : "none"; }
-      scrollBtn.addEventListener("click", () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+      window.onscroll = function () {
+        scrollBtn.style.display = (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) ? "block" : "none";
+      };
+      scrollBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
 
       const form = document.getElementById('contactForm');
       form.addEventListener('submit', function (e) {
@@ -160,6 +362,7 @@
         form.reset();
       });
 
+
       const faders = document.querySelectorAll('.ide-card, .skill, .project, footer, .section-spacing h2, .section-spacing h3');
       const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
@@ -170,6 +373,7 @@
         el.classList.add('fade-in');
         observer.observe(el);
       });
+
 
       const canvas = document.getElementById('grid-bg');
       const ctx = canvas.getContext('2d');
@@ -186,7 +390,6 @@
         ctx.clearRect(0, 0, w, h);
         ctx.strokeStyle = 'rgba(0,255,157,0.15)';
         ctx.lineWidth = 1;
-
         const gridSize = 40;
         for (let x = -w; x < w * 2; x += gridSize) {
           const offsetY = Math.sin((x + t) * 0.005) * 10;
@@ -199,7 +402,6 @@
           ctx.lineTo(w, x + offsetY);
           ctx.stroke();
         }
-
         t += 0.5;
         requestAnimationFrame(draw);
       }
@@ -213,14 +415,13 @@
       canvas.style.height = '100%';
       canvas.style.pointerEvents = 'none';
 
+
       const burger = document.getElementById('burger');
       const nav = document.querySelector('.nav-links');
-
       burger.addEventListener('click', () => {
         burger.classList.toggle('active');
         nav.classList.toggle('open');
       });
-
       document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
           burger.classList.remove('active');
@@ -228,9 +429,75 @@
         });
       });
 
+      const themeToggle = document.getElementById('themeToggle');
+      const themeIcon = themeToggle.querySelector('i');
+      if (localStorage.getItem('theme') === 'light') {
+        document.body.classList.add('light-theme');
+        themeIcon.classList.replace('fa-sun', 'fa-moon');
+      }
+      themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('light-theme');
+        const isLight = document.body.classList.contains('light-theme');
+        themeIcon.classList.replace(isLight ? 'fa-sun' : 'fa-moon', isLight ? 'fa-moon' : 'fa-sun');
+        localStorage.setItem('theme', isLight ? 'light' : 'dark');
+      });
+
+
+      const langBtn = document.getElementById("langToggle");
+      const langIcon = langBtn.querySelector("i");
+
+      function setLanguage(lang) {
+        document.querySelectorAll("[data-i18n]").forEach(el => {
+          const key = el.getAttribute("data-i18n");
+          const translation = translations[lang][key];
+          if (translation) {
+            el.style.transition = "opacity 0.2s ease";
+            el.style.opacity = 0;
+            setTimeout(() => {
+              el.innerHTML = translation; // 👈 теперь с HTML
+              el.style.opacity = 1;
+            }, 200);
+          }
+        });
+
+        document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+          const key = el.getAttribute("data-i18n-placeholder");
+          const translation = translations[lang][key];
+          if (translation) {
+            el.style.transition = "opacity 0.2s ease";
+            el.style.opacity = 0;
+            setTimeout(() => {
+              el.setAttribute("placeholder", translation);
+              el.style.opacity = 1;
+            }, 200);
+          }
+        });
+
+        if (lang === "fr") {
+          langIcon.className = "fa-solid fa-globe-europe";
+          langBtn.title = "Passer en anglais";
+        } else {
+          langIcon.className = "fa-solid fa-globe";
+          langBtn.title = "Switch to French";
+        }
+
+        startTyping(lang);
+        localStorage.setItem('lang', lang);
+      }
+
+      setLanguage(currentLang);
+
+      langBtn.addEventListener("click", () => {
+        currentLang = currentLang === "en" ? "fr" : "en";
+        setLanguage(currentLang);
+      });
+
+
 
     });
   </script>
+
+
 </body>
 
 </html>
