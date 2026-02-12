@@ -6,12 +6,55 @@
   <title>Anatoliy Lavrentiev | Web Developer Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
-    content="Portfolio of Anatoliy Lavrentiev, Web Developer. Projects include Logex, Job Board, Gestion Commerciale, Lavrfolio. Skills in PHP, Symfony, React, Node.js, Next.js, Java, HTML, CSS, JS.">
+    content="Portfolio of Anatoliy Lavrentiev, Web Developer. Projects include Logex, Job Board, Gestion Commerciale, Lavrfolio, Despotisme, Orbit Otter Chat. Skills in PHP, Symfony, Next.js, Java, Rust, Diesel, HTML, CSS, JS, Docker, Jenkins.">
   <meta name="keywords"
-    content="Web Developer, Portfolio, PHP, Symfony, React, Node.js, Next.js, Java, HTML, CSS, JS, Job Board, Logex">
+    content="Web Developer, Portfolio, PHP, Symfony, Next.js, Java, Rust, Diesel, WebSocket, Docker, Jenkins, HTML, CSS, JS, Job Board, Logex">
+  <meta name="author" content="Anatoliy Lavrentiev">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://anatoliylavrentiev.github.io/" />
+  <meta name="theme-color" content="#00ff9d">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Anatoliy Lavrentiev Portfolio">
+  <meta property="og:title" content="Anatoliy Lavrentiev | Web Developer Portfolio">
+  <meta property="og:description"
+    content="Web developer portfolio with PHP/Symfony, Java, Rust and real-time projects. Explore code, stack and delivery highlights.">
+  <meta property="og:url" content="https://anatoliylavrentiev.github.io/">
+  <meta property="og:image" content="https://anatoliylavrentiev.github.io/assets/profile_picture.png">
+  <meta property="og:image:alt" content="Portrait of Anatoliy Lavrentiev">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Anatoliy Lavrentiev | Web Developer Portfolio">
+  <meta name="twitter:description"
+    content="Web developer portfolio with PHP/Symfony, Java, Rust and real-time projects.">
+  <meta name="twitter:url" content="https://anatoliylavrentiev.github.io/">
+  <meta name="twitter:image" content="https://anatoliylavrentiev.github.io/assets/profile_picture.png">
+  <meta name="twitter:image:alt" content="Portrait of Anatoliy Lavrentiev">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Anatoliy Lavrentiev",
+      "url": "https://anatoliylavrentiev.github.io/",
+      "image": "https://anatoliylavrentiev.github.io/assets/profile_picture.png",
+      "jobTitle": "Full Stack Developer",
+      "sameAs": [
+        "https://github.com/AnatoliyLavrentiev",
+        "https://www.linkedin.com/in/anatoliy-lavrentiev/"
+      ],
+      "knowsAbout": [
+        "PHP",
+        "Symfony",
+        "Java",
+        "Rust",
+        "Docker",
+        "Jenkins",
+        "WebSocket"
+      ]
+    }
+  </script>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -24,7 +67,7 @@
   <canvas id="grid-bg"></canvas>
 
   <header>
-    <nav class="nav-links" role="navigation" aria-label="Main Navigation">
+    <nav class="nav-links" id="mainNav" role="navigation" aria-label="Main Navigation">
       <a href="#about" class="btn-large neon-btn"><i class="fa-solid fa-user"></i> <b
           data-i18n="nav.about">About</b></a>
       <a href="#projects" class="btn-large neon-btn"><i class="fa-solid fa-briefcase"></i> <b
@@ -40,9 +83,9 @@
     <button id="themeToggle" class="neon-btn" aria-label="Toggle Theme"><i class="fa-solid fa-sun"></i></button>
     <button id="langToggle" class="neon-btn" aria-label="Toggle Language"><i class="fa-solid fa-globe"></i></button>
 
-    <div class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+    <button type="button" class="burger" id="burger" aria-label="Menu" aria-controls="mainNav" aria-expanded="false">
       <span></span><span></span><span></span>
-    </div>
+    </button>
   </header>
 
   <section id="lavr" class="video-banner" role="banner">
@@ -54,6 +97,14 @@
   <main class="content">
     <section id="about" class="section-spacing container" aria-labelledby="about-title">
       <h2 id="about-title" class="fade-in">About Me</h2>
+      <p class="about-value center-align" data-i18n="about.value">
+        Full Stack developer delivering real-world products with PHP/Symfony, Java, and Rust.
+      </p>
+      <div class="about-metrics" aria-label="About metrics">
+        <div class="metric-chip" data-i18n="about.metric.projects">3+ major projects at Epitech</div>
+        <div class="metric-chip" data-i18n="about.metric.ecosystems">2 ecosystems: web + game dev</div>
+        <div class="metric-chip" data-i18n="about.metric.bugs">3000+ hours in bug fixing</div>
+      </div>
       <article class="ide-card">
         <div class="ide-header">
           <span class="red-dot"></span><span class="yellow-dot"></span><span class="green-dot"></span>
@@ -61,13 +112,16 @@
         <div class="ide-body">
           <div class="row valign-wrapper">
             <div class="col s3">
-              <img src="assets/profile_picture.png" alt="Portrait of Anatoliy Lavrentiev"
+              <img src="assets/profile_picture.png" alt="Portrait of Anatoliy Lavrentiev" loading="lazy" decoding="async"
                 class="circle responsive-img" />
             </div>
             <div class="col s9">
-              <p class="code-line">const name = "<span class="var">Anatoliy</span>";</p>
-              <p class="code-line">let role = "<span class="fn">Web Developer</span>";</p>
-              <p class="code-line">skills.upgrade(<span class="kw">true</span>);</p>
+              <p class="code-line">const name = "<span class="str">Anatoliy</span>";</p>
+              <p class="code-line">const role = "<span class="str">Web Developer</span>";</p>
+              <p class="code-line">const skillsUpgrade = <span class="str">true</span>;</p>
+              <p class="code-line" data-i18n="about.profile.teamwork">const teamwork = <span class='str'>true</span>;</p>
+              <p class="code-line" data-i18n="about.profile.adaptability">const adaptability = <span class='str'>"high"</span>;</p>
+              <p class="code-line" data-i18n="about.profile.proactive">const proactiveContributor = <span class='str'>true</span>;</p>
               <a href="CV.pdf" download class="btn neon-btn" data-i18n="button.cv" title="Download CV">downloadCV();</a>
             </div>
           </div>
@@ -81,14 +135,14 @@
         </div>
         <div class="ide-body">
           <p class="code-line comment" data-i18n="log.comment">// My learning journey and skill progress</p>
-          <p class="code-line" data-i18n="log.line1">console.log("<span class='str'>J’ai commencé à apprendre le code
-              lors de ma formation Développeur Web et Web Mobile (Titre Professionnel de niveau 5) de juillet 2024 à
-              avril 2025.</span>");</p>
-          <p class="code-line" data-i18n="log.line2">console.log("<span class='str'>Bases étudiées : MySQL, PostgreSQL,
-              HTML, CSS, JavaScript, PHP (framework Symfony). Projet final développé avec Symfony.</span>");</p>
-          <p class="code-line" data-i18n="log.line3">console.log("<span class='str'>Aujourd’hui à Epitech : migration
-              vers Linux, consolidation des bases, nouvelles compétences en Python, et création du projet Job Board avec
-              PostgreSQL et Next.js.</span>");</p>
+          <p class="code-line" data-i18n="log.line1">console.log("<span class='str'>I started learning to code during my
+              Web and Mobile Web Developer training (Level 5 Professional Title) from July 2024 to April 2025. Learned
+              fundamentals: MySQL, PostgreSQL, HTML, CSS, JavaScript, PHP (Symfony framework).</span>");</p>
+          <p class="code-line" data-i18n="log.line2">console.log("<span class='str'>Since September 2025, I have been at
+              Epitech, where I built Job Board, Despotisme, and Orbit Otter Chat, learned to work with Docker, and
+              discovered the basics of Jenkins.</span>");</p>
+          <p class="code-line" data-i18n="log.line3">console.log("<span class='str'>I keep working on concrete projects,
+              growing my hands-on experience, and enjoying the process.</span>");</p>
         </div>
       </article>
     </section>
@@ -103,6 +157,11 @@
             <p class="code-line">repo: <a href="https://github.com/AnatoliyLavrentiev/Logex" target="_blank"
                 class="link" rel="noopener noreferrer" title="Logex GitHub Repository">Logex</a></p>
             <p class="code-line">stack: [PHP, Symfony]</p>
+            <p class="project-summary">Logistics-oriented web app with structured modules and CRUD flows.</p>
+            <ul class="project-points">
+              <li>Designed backend logic and domain structure with Symfony.</li>
+              <li>Implemented data flows from forms to database persistence.</li>
+            </ul>
           </div>
         </article>
 
@@ -113,6 +172,11 @@
             <p class="code-line">repo: <a href="https://github.com/AnatoliyLavrentiev/job_board_deploy" target="_blank"
                 class="link" rel="noopener noreferrer" title="Job Board GitHub Repository">Job Board</a></p>
             <p class="code-line">stack: [React, Node.js, PostgreSQL]</p>
+            <p class="project-summary">Full-stack recruiting platform for posting and browsing jobs.</p>
+            <ul class="project-points">
+              <li>Built end-to-end feature flow: API, UI, and PostgreSQL integration.</li>
+              <li>Delivered deployment-ready structure for collaborative iteration.</li>
+            </ul>
           </div>
         </article>
 
@@ -124,6 +188,41 @@
                 target="_blank" class="link" rel="noopener noreferrer"
                 title="Gestion Commerciale GitHub Repository">Gestion Commerciale</a></p>
             <p class="code-line">stack: [PHP, SQL]</p>
+            <p class="project-summary">Commercial management project focused on reliable business operations.</p>
+            <ul class="project-points">
+              <li>Implemented SQL-backed workflows for customer and sales data.</li>
+              <li>Strengthened CRUD consistency and validation in business forms.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="ide-card project">
+          <div class="ide-header"><span class="red-dot"></span><span class="yellow-dot"></span><span
+              class="green-dot"></span></div>
+          <div class="ide-body">
+            <p class="code-line">repo: <a href="https://github.com/AnatoliyLavrentiev/Despotisme" target="_blank"
+                class="link" rel="noopener noreferrer" title="Despotisme GitHub Repository">Despotisme</a></p>
+            <p class="code-line">stack: [Java, LibGDX]</p>
+            <p class="project-summary">My first game development project: a Java/LibGDX sandbox to apply OOP and clean architecture in practice.</p>
+            <ul class="project-points">
+              <li>Applied Java OOP principles and design patterns to build reusable gameplay components.</li>
+              <li>Implemented A* pathfinding for entity navigation and smarter movement behavior.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="ide-card project">
+          <div class="ide-header"><span class="red-dot"></span><span class="yellow-dot"></span><span
+              class="green-dot"></span></div>
+          <div class="ide-body">
+            <p class="code-line">repo: <a href="https://github.com/AnatoliyLavrentiev/Orbit_Otter_Chat" target="_blank"
+                class="link" rel="noopener noreferrer" title="Orbit Otter Chat GitHub Repository">Orbit Otter Chat</a></p>
+            <p class="code-line">stack: [Rust, Diesel, WebSocket]</p>
+            <p class="project-summary">Real-time chat platform with Rust backend and persistent storage.</p>
+            <ul class="project-points">
+              <li>Implemented WebSocket messaging and broadcast flow.</li>
+              <li>Integrated Diesel ORM with PostgreSQL for durable chat data.</li>
+            </ul>
           </div>
         </article>
 
@@ -134,6 +233,11 @@
             <p class="code-line">repo: <a href="https://github.com/AnatoliyLavrentiev/Lavrfolio" target="_blank"
                 class="link" rel="noopener noreferrer" title="Lavrfolio GitHub Repository">Lavrfolio</a></p>
             <p class="code-line">stack: [HTML, CSS, JS]</p>
+            <p class="project-summary">Personal portfolio focused on UX polish and maintainable frontend.</p>
+            <ul class="project-points">
+              <li>Designed responsive sections, localization, and theme switching.</li>
+              <li>Iterated on accessibility and animation performance.</li>
+            </ul>
           </div>
         </article>
       </div>
@@ -141,35 +245,48 @@
 
 <section id="skills" class="section-spacing" aria-labelledby="skills-title">
   <h2 id="skills-title" class="neon-text center-align" data-i18n="section.skills">Skills</h2>
-  <div class="row">
-    <div class="col s12 m6 l4">
-      <div class="ide-card skill">
-        <p class="code-line">&lt;HTML5 / CSS3&gt;</p>
-      </div>
+  <div class="ide-card skills-terminal">
+    <div class="ide-header">
+      <span class="red-dot"></span><span class="yellow-dot"></span><span class="green-dot"></span>
+      <span class="ide-title">&lt;skills.map&gt;</span>
     </div>
-    <div class="col s12 m6 l4">
-      <div class="ide-card skill">
-        <p class="code-line">const js = true;</p>
+    <div class="ide-body skills-groups">
+      <div class="skills-group">
+        <p class="code-line">frontend:</p>
+        <div class="skills-tags">
+          <span class="skill-tag">HTML5</span>
+          <span class="skill-tag">CSS3</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">Next.js</span>
+        </div>
       </div>
-    </div>
-    <div class="col s12 m6 l4">
-      <div class="ide-card skill">
-        <p class="code-line">db.query(SQL)</p>
+      <div class="skills-group">
+        <p class="code-line">backend:</p>
+        <div class="skills-tags">
+          <span class="skill-tag">PHP</span>
+          <span class="skill-tag">Symfony</span>
+          <span class="skill-tag">Java</span>
+          <span class="skill-tag">Rust</span>
+        </div>
       </div>
-    </div>
-    <div class="col s12 m6 l4">
-      <div class="ide-card skill">
-        <p class="code-line">php bin/console</p>
+      <div class="skills-group">
+        <p class="code-line">data & realtime:</p>
+        <div class="skills-tags">
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">PostgreSQL</span>
+          <span class="skill-tag">Diesel</span>
+          <span class="skill-tag">WebSocket</span>
+        </div>
       </div>
-    </div>
-    <div class="col s12 m6 l4">
-      <div class="ide-card skill">
-        <p class="code-line">import Next from 'next'</p>
-      </div>
-    </div>
-    <div class="col s12 m6 l4">
-      <div class="ide-card skill">
-        <p class="code-line">public class JavaApp {}</p>
+      <div class="skills-group">
+        <p class="code-line">tools:</p>
+        <div class="skills-tags">
+          <span class="skill-tag">LibGDX</span>
+          <span class="skill-tag">Docker</span>
+          <span class="skill-tag">Jenkins</span>
+          <span class="skill-tag">Linux</span>
+          <span class="skill-tag">Git</span>
+        </div>
       </div>
     </div>
   </div>
@@ -178,23 +295,35 @@
 
     <section id="hobbies" class="section-spacing" aria-labelledby="hobbies-title">
       <h2 id="hobbies-title" class="center-align neon-text" data-i18n="section.hobbies">Hobbies</h2>
-      <div class="carousel-container">
+      <div class="carousel-container" tabindex="0" aria-label="Hobbies carousel">
         <div class="carousel-wrapper">
           <div class="carousel-track">
-            <div class="carousel-slide"><img src="assets/hobbies_1.jpg" alt="Cooking" /></div>
-            <div class="carousel-slide"><img src="assets/hobbies_2.jpg" alt="Drums" /></div>
-            <div class="carousel-slide"><img src="assets/hobbies_3.jpg" alt="Hiking" /></div>
-            <div class="carousel-slide"><img src="assets/hobbies_4.jpg" alt="Running" /></div>
+            <div class="carousel-slide">
+              <img src="assets/hobbies_1.jpg" alt="Cooking" loading="lazy" decoding="async" />
+              <p class="carousel-caption" data-i18n="carousel.caption.cooking">Cooking</p>
+            </div>
+            <div class="carousel-slide">
+              <img src="assets/hobbies_2.jpg" alt="Drums" loading="lazy" decoding="async" />
+              <p class="carousel-caption" data-i18n="carousel.caption.drums">Drums</p>
+            </div>
+            <div class="carousel-slide">
+              <img src="assets/hobbies_3.jpg" alt="Hiking" loading="lazy" decoding="async" />
+              <p class="carousel-caption" data-i18n="carousel.caption.hiking">Hiking</p>
+            </div>
+            <div class="carousel-slide">
+              <img src="assets/hobbies_4.jpg" alt="Running" loading="lazy" decoding="async" />
+              <p class="carousel-caption" data-i18n="carousel.caption.running">Running</p>
+            </div>
           </div>
         </div>
-        <span class="carousel-btn prev" aria-label="Previous">&#10094;</span>
-        <span class="carousel-btn next" aria-label="Next">&#10095;</span>
-
+        <button type="button" class="carousel-btn prev" aria-label="Previous">&#10094;</button>
+        <button type="button" class="carousel-btn next" aria-label="Next">&#10095;</button>
+        <div class="carousel-dots" aria-label="Carousel pagination"></div>
       </div>
     </section>
 
     <section id="contact" class="section-spacing row" aria-labelledby="contact-title">
-      <h3 id="contact-title" class="col s12 center-align neon-text" data-i18n="section.contact">Contact</h3>
+      <h2 id="contact-title" class="col s12 center-align neon-text" data-i18n="section.contact">Contact</h2>
       <form id="contactForm" class="col s12 m8 offset-m2">
         <div class="input-field">
           <input type="text" id="firstname" class="validate white-text" required />
@@ -209,15 +338,25 @@
           <label for="email" data-i18n="form.email">Email</label>
         </div>
         <div class="input-field">
+          <input type="text" id="subject" class="validate white-text" required />
+          <label for="subject" data-i18n="form.subject">Subject</label>
+        </div>
+        <div class="input-field">
           <textarea id="message" class="materialize-textarea white-text" placeholder="Your message"
             data-i18n-placeholder="form.message" required></textarea>
         </div>
-        <div class="center-align">
+        <div class="center-align contact-actions">
           <button class="btn neon-btn" type="submit" aria-label="Send Message">
             <i class="fa-solid fa-paper-plane"></i>
             <span data-i18n="form.send">Send</span>
           </button>
+          <button class="btn ghost-btn" id="copyEmailBtn" type="button">
+            <i class="fa-regular fa-copy"></i>
+            <span data-i18n="form.copyEmail">Copy Email</span>
+          </button>
         </div>
+        <p class="contact-tip center-align" data-i18n="form.tip">If your email app does not open, copy my email and write directly.</p>
+        <p id="contactStatus" class="contact-status center-align" role="status" aria-live="polite"></p>
       </form>
     </section>
   </main>
@@ -236,26 +375,138 @@
 
 
 
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const carouselContainer = document.querySelector(".carousel-container");
       const track = document.querySelector(".carousel-track");
       const slides = Array.from(track.children);
       const nextButton = document.querySelector(".carousel-btn.next");
       const prevButton = document.querySelector(".carousel-btn.prev");
+      const dotsContainer = document.querySelector(".carousel-dots");
+      const autoplayDelay = 5000;
       let currentIndex = 0;
+      let autoplayId = null;
+      let touchStartX = 0;
+      let touchDeltaX = 0;
 
-      function updateCarousel() {
-        const offset = -currentIndex * 100;
-        track.style.transform = `translateX(${offset}%)`;
+      function updateDots() {
+        if (!dotsContainer) return;
+        dotsContainer.querySelectorAll(".carousel-dot").forEach((dot, idx) => {
+          const isActive = idx === currentIndex;
+          dot.classList.toggle("active", isActive);
+          dot.setAttribute("aria-current", isActive ? "true" : "false");
+        });
       }
 
-      nextButton.addEventListener("click", () => {
-        currentIndex = (currentIndex + 1) % slides.length;
+      function updateCarousel(animate = true) {
+        const offset = -currentIndex * 100;
+        if (!animate) {
+          const previousTransition = track.style.transition;
+          track.style.transition = "none";
+          track.style.transform = `translateX(${offset}%)`;
+          requestAnimationFrame(() => {
+            track.style.transition = previousTransition || "transform 0.6s ease-in-out";
+          });
+        } else {
+          track.style.transform = `translateX(${offset}%)`;
+        }
+
+        slides.forEach((slide, idx) => {
+          slide.classList.toggle("active", idx === currentIndex);
+        });
+        updateDots();
+      }
+
+      function stopAutoplay() {
+        if (autoplayId) {
+          clearInterval(autoplayId);
+          autoplayId = null;
+        }
+      }
+
+      function startAutoplay() {
+        if (prefersReducedMotion || slides.length < 2) return;
+        stopAutoplay();
+        autoplayId = setInterval(() => {
+          goToSlide(currentIndex + 1, { restartAutoplay: false });
+        }, autoplayDelay);
+      }
+
+      function restartAutoplay() {
+        stopAutoplay();
+        startAutoplay();
+      }
+
+      function goToSlide(index, options = {}) {
+        const { restartAutoplay: shouldRestartAutoplay = true } = options;
+        currentIndex = (index + slides.length) % slides.length;
         updateCarousel();
+        if (shouldRestartAutoplay) restartAutoplay();
+      }
+
+      function createDots() {
+        if (!dotsContainer) return;
+        dotsContainer.innerHTML = "";
+        slides.forEach((_, idx) => {
+          const dot = document.createElement("button");
+          dot.type = "button";
+          dot.className = "carousel-dot";
+          dot.setAttribute("aria-label", `Go to slide ${idx + 1}`);
+          dot.addEventListener("click", () => goToSlide(idx));
+          dotsContainer.appendChild(dot);
+        });
+      }
+
+      nextButton.addEventListener("click", () => goToSlide(currentIndex + 1));
+      prevButton.addEventListener("click", () => goToSlide(currentIndex - 1));
+
+      carouselContainer.addEventListener("mouseenter", stopAutoplay);
+      carouselContainer.addEventListener("mouseleave", startAutoplay);
+      carouselContainer.addEventListener("focusin", stopAutoplay);
+      carouselContainer.addEventListener("focusout", startAutoplay);
+
+      carouselContainer.addEventListener("keydown", (event) => {
+        if (event.key === "ArrowRight") {
+          event.preventDefault();
+          goToSlide(currentIndex + 1);
+        } else if (event.key === "ArrowLeft") {
+          event.preventDefault();
+          goToSlide(currentIndex - 1);
+        } else if (event.key === "Home") {
+          event.preventDefault();
+          goToSlide(0);
+        } else if (event.key === "End") {
+          event.preventDefault();
+          goToSlide(slides.length - 1);
+        }
       });
 
-      prevButton.addEventListener("click", () => {
-        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-        updateCarousel();
+      carouselContainer.addEventListener("touchstart", (event) => {
+        touchStartX = event.changedTouches[0].clientX;
+        touchDeltaX = 0;
+      }, { passive: true });
+
+      carouselContainer.addEventListener("touchmove", (event) => {
+        touchDeltaX = event.changedTouches[0].clientX - touchStartX;
+      }, { passive: true });
+
+      carouselContainer.addEventListener("touchend", () => {
+        if (Math.abs(touchDeltaX) > 40) {
+          if (touchDeltaX < 0) {
+            goToSlide(currentIndex + 1);
+          } else {
+            goToSlide(currentIndex - 1);
+          }
+        }
+      }, { passive: true });
+
+      document.addEventListener("visibilitychange", () => {
+        if (document.hidden) stopAutoplay();
+        else startAutoplay();
       });
+
+      createDots();
+      updateCarousel(false);
+      startAutoplay();
 
 
       const typedText = document.getElementById("typed-text");
@@ -263,10 +514,17 @@
       const translations = {
         en: {
           "about.title": "About Me",
+          "about.value": "Full Stack developer delivering real-world products with PHP/Symfony, Java, and Rust.",
+          "about.metric.projects": "3+ major projects at Epitech",
+          "about.metric.ecosystems": "2 ecosystems: web + game dev",
+          "about.metric.bugs": "3000+ hours in bug fixing",
+          "about.profile.teamwork": "const teamwork = <span class='str'>true</span>;",
+          "about.profile.adaptability": "const adaptability = <span class='str'>high</span>;",
+          "about.profile.proactive": "const proactiveContributor = <span class='str'>true</span>;",
           "log.comment": "<span class='comment'>// My learning journey and skill progress</span>",
-          "log.line1": "console.log(<span class='var'>\"I started learning to code during my Web and Mobile Web Developer training (Level 5 Professional Title) from July 2024 to April 2025.\"</span>);",
-          "log.line2": "console.log(<span class='var'>\"Learned fundamentals: MySQL, PostgreSQL, HTML, CSS, JavaScript, PHP (Symfony framework). Final project developed with Symfony.\"</span>);",
-          "log.line3": "console.log(<span class='var'>\"Now at Epitech: switched to Linux, refreshed my front-end stack, started Python, and built a Job Board project with PostgreSQL and Next.js.\"</span>);",
+          "log.line1": "console.log(<span class='var'>\"I started learning to code during my Web and Mobile Web Developer training (Level 5 Professional Title) from July 2024 to April 2025. Learned fundamentals: MySQL, PostgreSQL, HTML, CSS, JavaScript, PHP (Symfony framework).\"</span>);",
+          "log.line2": "console.log(<span class='var'>\"Since September 2025, I have been at Epitech, where I built Job Board, Despotisme, and Orbit Otter Chat, learned to work with Docker, and discovered the basics of Jenkins.\"</span>);",
+          "log.line3": "console.log(<span class='var'>\"I keep working on concrete projects, growing my hands-on experience, and enjoying the process.\"</span>);",
           "typed.greeting": ["> Hello, I'm Anatoliy > Web Developer | Coding Enthusiast"],
           "nav.about": "About",
           "nav.projects": "Projects",
@@ -277,19 +535,36 @@
           "section.skills": "Skills",
           "section.hobbies": "Hobbies",
           "section.contact": "Contact",
+          "carousel.caption.cooking": "Cooking",
+          "carousel.caption.drums": "Drums",
+          "carousel.caption.hiking": "Hiking",
+          "carousel.caption.running": "Running",
           "form.firstname": "Firstname",
           "form.lastname": "Lastname",
           "form.email": "Email",
+          "form.subject": "Subject",
           "form.message": "Your message",
           "form.send": "Send",
+          "form.copyEmail": "Copy Email",
+          "form.tip": "If your email app does not open, copy my email and write directly.",
+          "form.status.sent": "Opening your email app. If nothing happens, write to anatoliy.lavrentiev1@gmail.com.",
+          "form.status.copied": "Email copied: anatoliy.lavrentiev1@gmail.com",
+          "form.status.copyFailed": "Could not copy automatically. Email: anatoliy.lavrentiev1@gmail.com",
           "button.cv": "downloadCV();"
         },
         fr: {
           "about.title": "À propos de moi",
+          "about.value": "Développeur Full Stack, je réalise des produits concrets avec PHP/Symfony, Java et Rust.",
+          "about.metric.projects": "3+ projets majeurs à Epitech",
+          "about.metric.ecosystems": "2 écosystèmes : web + game dev",
+          "about.metric.bugs": "3000+ heures de bug fixing",
+          "about.profile.teamwork": "const teamwork = <span class='str'>true</span>;",
+          "about.profile.adaptability": "const adaptability = <span class='str'>high</span>;",
+          "about.profile.proactive": "const proactiveContributor = <span class='str'>true</span>;",
           "log.comment": "<span class='comment'>// Mon parcours d'apprentissage et progression des compétences</span>",
-          "log.line1": "console.log(<span class='var'>\"J’ai commencé à apprendre le code lors de ma formation Développeur Web et Web Mobile (Titre Professionnel de niveau 5) de juillet 2024 à avril 2025.\"</span>);",
-          "log.line2": "console.log(<span class='var'>\"Bases étudiées : MySQL, PostgreSQL, HTML, CSS, JavaScript, PHP (framework Symfony). Projet final développé avec Symfony.\"</span>);",
-          "log.line3": "console.log(<span class='var'>\"Aujourd’hui à Epitech : passage à Linux, consolidation des bases, nouvelles compétences en Python, et création du projet Job Board avec PostgreSQL et Next.js.\"</span>);",
+          "log.line1": "console.log(<span class='var'>\"J’ai commencé à apprendre le code lors de ma formation Développeur Web et Web Mobile (Titre Professionnel de niveau 5) de juillet 2024 à avril 2025. Bases étudiées : MySQL, PostgreSQL, HTML, CSS, JavaScript, PHP (framework Symfony).\"</span>);",
+          "log.line2": "console.log(<span class='var'>\"Depuis septembre 2025, je suis à Epitech, où j’ai réalisé Job Board, Despotisme et Orbit Otter Chat, appris à travailler avec Docker et découvert les bases de Jenkins.\"</span>);",
+          "log.line3": "console.log(<span class='var'>\"Je continue à travailler sur des projets concrets, à gagner en expérience pratique et à prendre plaisir au processus.\"</span>);",
           "typed.greeting": ["> Bonjour, je suis Anatoliy > Développeur Web | Passionné de code"],
           "nav.about": "À propos",
           "nav.projects": "Projets",
@@ -300,11 +575,21 @@
           "section.skills": "Compétences",
           "section.hobbies": "Loisirs",
           "section.contact": "Contact",
+          "carousel.caption.cooking": "Cuisine",
+          "carousel.caption.drums": "Batterie",
+          "carousel.caption.hiking": "Randonnée",
+          "carousel.caption.running": "Course",
           "form.firstname": "Prénom",
           "form.lastname": "Nom",
           "form.email": "E-mail",
+          "form.subject": "Objet",
           "form.message": "Votre message",
           "form.send": "Envoyer",
+          "form.copyEmail": "Copier l'e-mail",
+          "form.tip": "Si votre application e-mail ne s'ouvre pas, copiez mon adresse et écrivez-moi directement.",
+          "form.status.sent": "Ouverture de votre application e-mail. Sinon, écrivez à anatoliy.lavrentiev1@gmail.com.",
+          "form.status.copied": "E-mail copié : anatoliy.lavrentiev1@gmail.com",
+          "form.status.copyFailed": "Copie automatique impossible. E-mail : anatoliy.lavrentiev1@gmail.com",
           "button.cv": "téléchargerCV();"
         }
       };
@@ -314,69 +599,116 @@
 
       let line = 0, char = 0;
       let text = translations[currentLang]["typed.greeting"][0].split(" > ");
+      let typingTimeoutId = null;
+      let typingSessionId = 0;
 
-      function type() {
+      function type(sessionId) {
+        if (sessionId !== typingSessionId) return;
         if (line < text.length) {
           if (char < text[line].length) {
             typedText.innerHTML += text[line].charAt(char);
             char++;
-            setTimeout(type, 100);
+            typingTimeoutId = setTimeout(() => type(sessionId), 100);
           } else {
             typedText.innerHTML += "<br>";
             line++;
             char = 0;
-            setTimeout(type, 600);
+            typingTimeoutId = setTimeout(() => type(sessionId), 600);
           }
         }
       }
 
       function startTyping(lang) {
+        if (typingTimeoutId) clearTimeout(typingTimeoutId);
+        typingSessionId += 1;
+        const sessionId = typingSessionId;
         text = translations[lang]["typed.greeting"][0].split(" > ");
         typedText.style.transition = "opacity 0.3s ease";
         typedText.style.opacity = 0;
-        setTimeout(() => {
+        typingTimeoutId = setTimeout(() => {
+          if (sessionId !== typingSessionId) return;
           typedText.innerHTML = "";
           line = 0;
           char = 0;
           typedText.style.opacity = 1;
-          type();
+          type(sessionId);
         }, 300);
       }
 
-      startTyping(currentLang);
-
-
       const scrollBtn = document.getElementById("scrollTopBtn");
       window.onscroll = function () {
-        scrollBtn.style.display = (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) ? "block" : "none";
+        scrollBtn.style.display = (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) ? "flex" : "none";
       };
       scrollBtn.addEventListener("click", () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
       });
 
 
       const form = document.getElementById('contactForm');
+      const contactStatus = document.getElementById('contactStatus');
+      const copyEmailBtn = document.getElementById('copyEmailBtn');
+      const contactEmail = 'anatoliy.lavrentiev1@gmail.com';
+
+      function tr(key) {
+        return translations[currentLang][key] || key;
+      }
+
+      async function copyEmailToClipboard() {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(contactEmail);
+          return;
+        }
+        const temp = document.createElement('textarea');
+        temp.value = contactEmail;
+        temp.setAttribute('readonly', '');
+        temp.style.position = 'absolute';
+        temp.style.left = '-9999px';
+        document.body.appendChild(temp);
+        temp.select();
+        document.execCommand('copy');
+        document.body.removeChild(temp);
+      }
+
       form.addEventListener('submit', function (e) {
         e.preventDefault();
-        const name = document.getElementById('firstname').value;
+        const firstName = document.getElementById('firstname').value.trim();
+        const lastName = document.getElementById('lastname').value.trim();
         const email = document.getElementById('email').value;
+        const subjectInput = document.getElementById('subject').value.trim();
         const message = document.getElementById('message').value;
-        const mailtoLink = `mailto:gaguzka@gmail.com?subject=Message from ${encodeURIComponent(name)}&body=${encodeURIComponent(message + "\n\nFrom: " + name + " <" + email + ">")}`;
+        const fullName = `${firstName} ${lastName}`.trim();
+        const subject = subjectInput || `Portfolio message from ${fullName}`;
+        const body = `${message}\n\nFrom: ${fullName} <${email}>`;
+        const mailtoLink = `mailto:${contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         window.location.href = mailtoLink;
+        contactStatus.textContent = tr("form.status.sent");
         form.reset();
       });
 
-
-      const faders = document.querySelectorAll('.ide-card, .skill, .project, footer, .section-spacing h2, .section-spacing h3');
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) entry.target.classList.add('visible');
-        });
-      }, { threshold: 0.2 });
-      faders.forEach(el => {
-        el.classList.add('fade-in');
-        observer.observe(el);
+      copyEmailBtn.addEventListener('click', async () => {
+        try {
+          await copyEmailToClipboard();
+          contactStatus.textContent = tr("form.status.copied");
+        } catch (err) {
+          contactStatus.textContent = tr("form.status.copyFailed");
+        }
       });
+
+
+      const faders = document.querySelectorAll('.ide-card, .skill, .project, footer, .section-spacing h2');
+      if (!prefersReducedMotion) {
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('visible');
+          });
+        }, { threshold: 0.2 });
+        faders.forEach(el => {
+          el.classList.add('fade-in');
+          observer.observe(el);
+        });
+      } else {
+        faders.forEach(el => el.classList.add('visible'));
+      }
 
 
       const canvas = document.getElementById('grid-bg');
@@ -409,7 +741,7 @@
         t += 0.5;
         requestAnimationFrame(draw);
       }
-      draw();
+      if (!prefersReducedMotion) draw();
 
       canvas.style.position = 'fixed';
       canvas.style.top = 0;
@@ -423,14 +755,23 @@
       const burger = document.getElementById('burger');
       const nav = document.querySelector('.nav-links');
       burger.addEventListener('click', () => {
-        burger.classList.toggle('active');
-        nav.classList.toggle('open');
+        const isOpen = burger.classList.toggle('active');
+        nav.classList.toggle('open', isOpen);
+        burger.setAttribute('aria-expanded', String(isOpen));
       });
       document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
           burger.classList.remove('active');
           nav.classList.remove('open');
+          burger.setAttribute('aria-expanded', 'false');
         });
+      });
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+          burger.classList.remove('active');
+          nav.classList.remove('open');
+          burger.setAttribute('aria-expanded', 'false');
+        }
       });
 
       const themeToggle = document.getElementById('themeToggle');
@@ -451,6 +792,7 @@
       const langIcon = langBtn.querySelector("i");
 
       function setLanguage(lang) {
+        document.documentElement.lang = lang;
         document.querySelectorAll("[data-i18n]").forEach(el => {
           const key = el.getAttribute("data-i18n");
           const translation = translations[lang][key];
@@ -458,7 +800,7 @@
             el.style.transition = "opacity 0.2s ease";
             el.style.opacity = 0;
             setTimeout(() => {
-              el.innerHTML = translation; // 👈 теперь с HTML
+              el.innerHTML = translation;
               el.style.opacity = 1;
             }, 200);
           }
