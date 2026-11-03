@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" fill="none">
+  <defs>
+    <linearGradient id="bg" x2="320" y2="320" gradientUnits="userSpaceOnUse"><stop stop-color="#102b28"/><stop offset="1" stop-color="#091219"/></linearGradient>
+    <linearGradient id="skin" x1="112" y1="76" x2="212" y2="207" gradientUnits="userSpaceOnUse"><stop stop-color="#edc3ae"/><stop offset="1" stop-color="#cc977e"/></linearGradient>
+    <linearGradient id="beard" x1="160" y1="161" x2="160" y2="258" gradientUnits="userSpaceOnUse"><stop stop-color="#634638"/><stop offset="1" stop-color="#352c29"/></linearGradient>
+    <clipPath id="frame"><circle cx="160" cy="160" r="160"/></clipPath>
+  </defs>
+  <g clip-path="url(#frame)">
+    <path fill="url(#bg)" d="M0 0h320v320H0z"/>
+    <circle cx="160" cy="149" r="114" stroke="#00ff9d" stroke-opacity=".15"/>
+    <path d="m41 116-15 15 15 15m238-30 15 15-15 15M67 56h37m112 0h37" stroke="#00ff9d" stroke-width="3" stroke-linecap="round" opacity=".5"/>
+    <!-- Dark polo and open collar. -->
+    <path d="M44 320v-25c0-40 29-63 76-74h80c47 11 76 34 76 74v25" fill="#18232b" stroke="#4c8e7c" stroke-width="2"/>
+    <path d="M133 202h54l8 34-35 34-35-34z" fill="#bd8872"/>
+    <path d="m122 220-15 23 28 30 25-20-20-27m58-6 15 23-28 30-25-20 20-27" fill="#101b22" stroke="#34484a" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M160 267v53" stroke="#35474b" stroke-width="3"/>
+    <circle cx="169" cy="285" r="3" fill="#bbc7bc"/>
+    <!-- Shaved head, ears, and warm skin tones. -->
+    <ellipse cx="105" cy="148" rx="12" ry="22" fill="#d5a087"/>
+    <ellipse cx="215" cy="148" rx="12" ry="22" fill="#cb947e"/>
+    <path d="M103 136V113c0-44 22-69 57-69s57 25 57 69v43c0 41-24 67-57 67s-57-26-57-67z" fill="url(#skin)"/>
+    <path d="M116 92c5-21 20-33 39-35" stroke="#f5d8c5" stroke-opacity=".45" stroke-width="5" stroke-linecap="round"/>
+    <path d="M101 141q10-5 8 15m110-15q-10-5-8 15" stroke="#b9806e" stroke-width="3" stroke-linecap="round"/>
+    <!-- Brows and hazel eyes, without glasses. -->
+    <path d="M119 123q13-8 26-2m30 0q13-6 26 2" stroke="#725345" stroke-width="5" stroke-linecap="round"/>
+    <path d="M118 138q14-13 28 0-14 10-28 0Zm56 0q14-13 28 0-14 10-28 0Z" fill="#f2e5da"/>
+    <g fill="#8a7845"><ellipse cx="133" cy="137" rx="5" ry="6"/><ellipse cx="187" cy="137" rx="5" ry="6"/></g>
+    <g fill="#253135"><circle cx="133" cy="137" r="2.5"/><circle cx="187" cy="137" r="2.5"/></g>
+    <path d="M118 138q14-13 28 0m28 0q14-13 28 0" stroke="#795847" stroke-width="2" stroke-linecap="round"/>
+    <path d="m158 140-5 22q7 5 14 0" stroke="#b27b65" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Full beard, moustache, and a small visible smile. -->
+    <path d="M105 156c5 12 8 24 18 29 8-9 19-13 37-13s29 4 37 13c10-5 13-17 18-29l-1 47c-2 25-15 44-34 52l-20 8-20-8c-19-8-32-27-34-52z" fill="url(#beard)"/>
+    <path d="M139 192q21-11 42 0l-4 14q-17 14-34 0z" fill="#ce957f"/>
+    <path d="M143 198q17 5 34 0" stroke="#905d52" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M160 177c-15-3-25 5-31 18 12-1 22-4 31-11 9 7 19 10 31 11-6-13-16-21-31-18Z" fill="#50392f"/>
+    <g stroke="#9c7c66" stroke-opacity=".4" stroke-width="2" stroke-linecap="round">
+      <path d="m117 192 5 22m8-9 6 27m8-16 5 28m12-30v32m13-30-4 29m20-43-5 29m17-42-5 23"/>
+    </g>
+    <path d="m153 211 7 6 7-6" stroke="#50392f" stroke-width="4" stroke-linecap="round"/>
+  </g>
+</svg>

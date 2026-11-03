@@ -3,6 +3,8 @@
 
 <head>
   <meta charset="UTF-8" />
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-m10liHYVByxNAMUggSjzxvmu/hP8RGrtIs94oVS0W8M='; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
   <title>Anatoliy Lavrentiev | Web Developer Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
@@ -20,22 +22,22 @@
   <meta property="og:description"
     content="Web developer portfolio with PHP/Symfony, Java, Rust and real-time projects. Explore code, stack and delivery highlights.">
   <meta property="og:url" content="https://anatoliylavrentiev.github.io/">
-  <meta property="og:image" content="https://anatoliylavrentiev.github.io/assets/profile_picture.png">
-  <meta property="og:image:alt" content="Portrait of Anatoliy Lavrentiev">
+  <meta property="og:image" content="https://anatoliylavrentiev.github.io/assets/avatar.svg">
+  <meta property="og:image:alt" content="Illustrated avatar of Anatoliy Lavrentiev">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Anatoliy Lavrentiev | Web Developer Portfolio">
   <meta name="twitter:description"
     content="Web developer portfolio with PHP/Symfony, Java, Rust and real-time projects.">
   <meta name="twitter:url" content="https://anatoliylavrentiev.github.io/">
-  <meta name="twitter:image" content="https://anatoliylavrentiev.github.io/assets/profile_picture.png">
-  <meta name="twitter:image:alt" content="Portrait of Anatoliy Lavrentiev">
+  <meta name="twitter:image" content="https://anatoliylavrentiev.github.io/assets/avatar.svg">
+  <meta name="twitter:image:alt" content="Illustrated avatar of Anatoliy Lavrentiev">
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Anatoliy Lavrentiev",
       "url": "https://anatoliylavrentiev.github.io/",
-      "image": "https://anatoliylavrentiev.github.io/assets/profile_picture.png",
+      "image": "https://anatoliylavrentiev.github.io/assets/avatar.svg",
       "jobTitle": "Full Stack Developer",
       "sameAs": [
         "https://github.com/AnatoliyLavrentiev",
@@ -53,11 +55,10 @@
     }
   </script>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <link rel="stylesheet" href="assets/vendor/materialize.min.css" />
 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="assets/vendor/fira-code/fonts.css" />
+  <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css" />
 
   <link rel="icon" href="favicon.png" type="image/png" />
   <link rel="stylesheet" href="styles.css" />
@@ -123,8 +124,8 @@
         <div class="ide-body">
           <div class="row valign-wrapper">
             <div class="col s3">
-              <img src="assets/profile_picture.png" alt="Portrait of Anatoliy Lavrentiev" loading="lazy" decoding="async"
-                class="circle responsive-img" />
+              <img src="assets/avatar.svg" alt="Illustrated avatar of Anatoliy Lavrentiev" loading="lazy" decoding="async"
+                class="circle responsive-img profile-avatar" />
             </div>
             <div class="col s9">
               <p class="code-line">const name = "<span class="str">Anatoliy</span>";</p>
@@ -133,7 +134,7 @@
               <p class="code-line" data-i18n="about.profile.teamwork">const teamwork = <span class='str'>true</span>;</p>
               <p class="code-line" data-i18n="about.profile.adaptability">const adaptability = <span class='str'>"high"</span>;</p>
               <p class="code-line" data-i18n="about.profile.proactive">const proactiveContributor = <span class='str'>true</span>;</p>
-              <a href="CV.pdf" download class="btn neon-btn" data-i18n="button.cv" title="Download CV">downloadCV();</a>
+              <a href="CV_Anatoliy.pdf" download class="btn neon-btn" data-i18n="button.cv" title="Download CV">downloadCV();</a>
             </div>
           </div>
         </div>
@@ -152,6 +153,8 @@
           <p class="code-line" data-i18n="log.line2">console.log("<span class='str'>Since September 2025, I have been at
               Epitech, where I built Job Board, Despotisme, and Orbit Otter Chat, learned to work with Docker, and
               discovered the basics of Jenkins.</span>");</p>
+          <p class="code-line" data-i18n="log.line4">console.log("<span class='str'>At Epitech, I helped supervise a work-experience placement for seconde students — an opportunity to share knowledge, explain technical concepts clearly, and support students discovering the world of IT.</span>");</p>
+          <p class="code-line" data-i18n="log.line5">console.log("<span class='str'>I work as an Apprentice Data Analyst at DGAMPA, developing my analytical skills in a professional environment, with a focus on understanding data, asking useful questions, and presenting information clearly.</span>");</p>
           <p class="code-line" data-i18n="log.line3">console.log("<span class='str'>I keep working on concrete projects,
               growing my hands-on experience, and enjoying the process.</span>");</p>
         </div>
@@ -308,30 +311,27 @@
 
     <section id="hobbies" class="section-spacing" aria-labelledby="hobbies-title">
       <h2 id="hobbies-title" class="center-align neon-text" data-i18n="section.hobbies">Hobbies</h2>
-      <div class="carousel-container" tabindex="0" aria-label="Hobbies carousel">
-        <div class="carousel-wrapper">
-          <div class="carousel-track">
-            <div class="carousel-slide">
-              <img src="assets/hobbies_1.jpg" alt="Cooking" loading="lazy" decoding="async" />
-              <p class="carousel-caption" data-i18n="carousel.caption.cooking">Cooking</p>
-            </div>
-            <div class="carousel-slide">
-              <img src="assets/hobbies_2.jpg" alt="Drums" loading="lazy" decoding="async" />
-              <p class="carousel-caption" data-i18n="carousel.caption.drums">Drums</p>
-            </div>
-            <div class="carousel-slide">
-              <img src="assets/hobbies_3.jpg" alt="Hiking" loading="lazy" decoding="async" />
-              <p class="carousel-caption" data-i18n="carousel.caption.hiking">Hiking</p>
-            </div>
-            <div class="carousel-slide">
-              <img src="assets/hobbies_4.jpg" alt="Running" loading="lazy" decoding="async" />
-              <p class="carousel-caption" data-i18n="carousel.caption.running">Running</p>
-            </div>
-          </div>
-        </div>
-        <button type="button" class="carousel-btn prev" aria-label="Previous">&#10094;</button>
-        <button type="button" class="carousel-btn next" aria-label="Next">&#10095;</button>
-        <div class="carousel-dots" aria-label="Carousel pagination"></div>
+      <div class="hobbies-grid">
+        <article class="hobby-card">
+          <span class="hobby-index" aria-hidden="true">01 /</span>
+          <svg class="hobby-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 29h26l-3 17H22l-3-17Zm-4 0h34M26 22c-6-6 6-7 0-13m12 13c-6-6 6-7 0-13M24 51h16"/></svg>
+          <h3 data-i18n="hobby.cooking">Cooking</h3>
+        </article>
+        <article class="hobby-card">
+          <span class="hobby-index" aria-hidden="true">02 /</span>
+          <svg class="hobby-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="32" cy="30" rx="19" ry="8"/><path d="M13 30v16c0 11 38 11 38 0V30M20 36v13m12-11v15m12-17v13M17 10l27 13M47 9 23 23"/></svg>
+          <h3 data-i18n="hobby.drums">Drums</h3>
+        </article>
+        <article class="hobby-card">
+          <span class="hobby-index" aria-hidden="true">03 /</span>
+          <svg class="hobby-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 49 18-31 12 20 7-12 14 23H7Zm11-19 7 5 6-6M45 12v8m-4-4h8"/></svg>
+          <h3 data-i18n="hobby.hiking">Hiking</h3>
+        </article>
+        <article class="hobby-card">
+          <span class="hobby-index" aria-hidden="true">04 /</span>
+          <svg class="hobby-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="40" cy="12" r="5"/><path d="m25 25 8-6 9 10 10 2M33 19l-6 17 12 7-6 13M27 36 17 48H7M10 20h10M6 29h11"/></svg>
+          <h3 data-i18n="hobby.running">Running</h3>
+        </article>
       </div>
     </section>
 
@@ -383,476 +383,7 @@
 
   <button id="scrollTopBtn" aria-label="Scroll to Top"><i class="fa-solid fa-arrow-up"></i></button>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-
-
-
-      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      const carouselContainer = document.querySelector(".carousel-container");
-      const track = document.querySelector(".carousel-track");
-      const slides = Array.from(track.children);
-      const nextButton = document.querySelector(".carousel-btn.next");
-      const prevButton = document.querySelector(".carousel-btn.prev");
-      const dotsContainer = document.querySelector(".carousel-dots");
-      const autoplayDelay = 5000;
-      let currentIndex = 0;
-      let autoplayId = null;
-      let touchStartX = 0;
-      let touchDeltaX = 0;
-
-      function updateDots() {
-        if (!dotsContainer) return;
-        dotsContainer.querySelectorAll(".carousel-dot").forEach((dot, idx) => {
-          const isActive = idx === currentIndex;
-          dot.classList.toggle("active", isActive);
-          dot.setAttribute("aria-current", isActive ? "true" : "false");
-        });
-      }
-
-      function updateCarousel(animate = true) {
-        const offset = -currentIndex * 100;
-        if (!animate) {
-          const previousTransition = track.style.transition;
-          track.style.transition = "none";
-          track.style.transform = `translateX(${offset}%)`;
-          requestAnimationFrame(() => {
-            track.style.transition = previousTransition || "transform 0.6s ease-in-out";
-          });
-        } else {
-          track.style.transform = `translateX(${offset}%)`;
-        }
-
-        slides.forEach((slide, idx) => {
-          slide.classList.toggle("active", idx === currentIndex);
-        });
-        updateDots();
-      }
-
-      function stopAutoplay() {
-        if (autoplayId) {
-          clearInterval(autoplayId);
-          autoplayId = null;
-        }
-      }
-
-      function startAutoplay() {
-        if (prefersReducedMotion || slides.length < 2) return;
-        stopAutoplay();
-        autoplayId = setInterval(() => {
-          goToSlide(currentIndex + 1, { restartAutoplay: false });
-        }, autoplayDelay);
-      }
-
-      function restartAutoplay() {
-        stopAutoplay();
-        startAutoplay();
-      }
-
-      function goToSlide(index, options = {}) {
-        const { restartAutoplay: shouldRestartAutoplay = true } = options;
-        currentIndex = (index + slides.length) % slides.length;
-        updateCarousel();
-        if (shouldRestartAutoplay) restartAutoplay();
-      }
-
-      function createDots() {
-        if (!dotsContainer) return;
-        dotsContainer.innerHTML = "";
-        slides.forEach((_, idx) => {
-          const dot = document.createElement("button");
-          dot.type = "button";
-          dot.className = "carousel-dot";
-          dot.setAttribute("aria-label", `Go to slide ${idx + 1}`);
-          dot.addEventListener("click", () => goToSlide(idx));
-          dotsContainer.appendChild(dot);
-        });
-      }
-
-      nextButton.addEventListener("click", () => goToSlide(currentIndex + 1));
-      prevButton.addEventListener("click", () => goToSlide(currentIndex - 1));
-
-      carouselContainer.addEventListener("mouseenter", stopAutoplay);
-      carouselContainer.addEventListener("mouseleave", startAutoplay);
-      carouselContainer.addEventListener("focusin", stopAutoplay);
-      carouselContainer.addEventListener("focusout", startAutoplay);
-
-      carouselContainer.addEventListener("keydown", (event) => {
-        if (event.key === "ArrowRight") {
-          event.preventDefault();
-          goToSlide(currentIndex + 1);
-        } else if (event.key === "ArrowLeft") {
-          event.preventDefault();
-          goToSlide(currentIndex - 1);
-        } else if (event.key === "Home") {
-          event.preventDefault();
-          goToSlide(0);
-        } else if (event.key === "End") {
-          event.preventDefault();
-          goToSlide(slides.length - 1);
-        }
-      });
-
-      carouselContainer.addEventListener("touchstart", (event) => {
-        touchStartX = event.changedTouches[0].clientX;
-        touchDeltaX = 0;
-      }, { passive: true });
-
-      carouselContainer.addEventListener("touchmove", (event) => {
-        touchDeltaX = event.changedTouches[0].clientX - touchStartX;
-      }, { passive: true });
-
-      carouselContainer.addEventListener("touchend", () => {
-        if (Math.abs(touchDeltaX) > 40) {
-          if (touchDeltaX < 0) {
-            goToSlide(currentIndex + 1);
-          } else {
-            goToSlide(currentIndex - 1);
-          }
-        }
-      }, { passive: true });
-
-      document.addEventListener("visibilitychange", () => {
-        if (document.hidden) stopAutoplay();
-        else startAutoplay();
-      });
-
-      createDots();
-      updateCarousel(false);
-      startAutoplay();
-
-
-      const typedText = document.getElementById("typed-text");
-
-      const translations = {
-        en: {
-          "about.title": "About Me",
-          "about.value": "Full Stack developer delivering real-world products across backend, frontend, and infrastructure.",
-          "about.metric.projects": "major projects at Epitech",
-          "about.metric.bugs": "hours in bug fixing",
-          "about.profile.teamwork": "const teamwork = <span class='str'>true</span>;",
-          "about.profile.adaptability": "const adaptability = <span class='str'>high</span>;",
-          "about.profile.proactive": "const proactiveContributor = <span class='str'>true</span>;",
-          "log.comment": "<span class='comment'>// My learning journey and skill progress</span>",
-          "log.line1": "console.log(<span class='var'>\"I started learning to code during my Web and Mobile Web Developer training (Level 5 Professional Title) from July 2024 to April 2025. Learned fundamentals: MySQL, PostgreSQL, HTML, CSS, JavaScript, PHP (Symfony framework).\"</span>);",
-          "log.line2": "console.log(<span class='var'>\"Since September 2025, I have been at Epitech, where I built Job Board, Despotisme, and Orbit Otter Chat, learned to work with Docker, and discovered the basics of Jenkins.\"</span>);",
-          "log.line3": "console.log(<span class='var'>\"I keep working on concrete projects, growing my hands-on experience, and enjoying the process.\"</span>);",
-          "typed.greeting": ["> Hello, I'm Anatoliy > Web Developer | Coding Enthusiast"],
-          "nav.about": "About",
-          "nav.projects": "Projects",
-          "nav.skills": "Skills",
-          "nav.hobbies": "Hobbies",
-          "nav.contact": "Contact",
-          "section.projects": "Projects",
-          "section.skills": "Skills",
-          "section.hobbies": "Hobbies",
-          "section.contact": "Contact",
-          "carousel.caption.cooking": "Cooking",
-          "carousel.caption.drums": "Drums",
-          "carousel.caption.hiking": "Hiking",
-          "carousel.caption.running": "Running",
-          "form.firstname": "Firstname",
-          "form.lastname": "Lastname",
-          "form.email": "Email",
-          "form.subject": "Subject",
-          "form.message": "Your message",
-          "form.send": "Send",
-          "form.copyEmail": "Copy Email",
-          "form.tip": "If your email app does not open, copy my email and write directly.",
-          "form.status.sent": "Opening your email app. If nothing happens, write to anatoliy.lavrentiev1@gmail.com.",
-          "form.status.copied": "Email copied: anatoliy.lavrentiev1@gmail.com",
-          "form.status.copyFailed": "Could not copy automatically. Email: anatoliy.lavrentiev1@gmail.com",
-          "button.cv": "downloadCV();"
-        },
-        fr: {
-          "about.title": "À propos de moi",
-          "about.value": "Développeur Full Stack, je réalise des produits concrets côté backend, frontend et infrastructure.",
-          "about.metric.projects": "projets majeurs à Epitech",
-          "about.metric.bugs": "heures de bug fixing",
-          "about.profile.teamwork": "const teamwork = <span class='str'>true</span>;",
-          "about.profile.adaptability": "const adaptability = <span class='str'>high</span>;",
-          "about.profile.proactive": "const proactiveContributor = <span class='str'>true</span>;",
-          "log.comment": "<span class='comment'>// Mon parcours d'apprentissage et progression des compétences</span>",
-          "log.line1": "console.log(<span class='var'>\"J’ai commencé à apprendre le code lors de ma formation Développeur Web et Web Mobile (Titre Professionnel de niveau 5) de juillet 2024 à avril 2025. Bases étudiées : MySQL, PostgreSQL, HTML, CSS, JavaScript, PHP (framework Symfony).\"</span>);",
-          "log.line2": "console.log(<span class='var'>\"Depuis septembre 2025, je suis à Epitech, où j’ai réalisé Job Board, Despotisme et Orbit Otter Chat, appris à travailler avec Docker et découvert les bases de Jenkins.\"</span>);",
-          "log.line3": "console.log(<span class='var'>\"Je continue à travailler sur des projets concrets, à gagner en expérience pratique et à prendre plaisir au processus.\"</span>);",
-          "typed.greeting": ["> Bonjour, je suis Anatoliy > Développeur Web | Passionné de code"],
-          "nav.about": "À propos",
-          "nav.projects": "Projets",
-          "nav.skills": "Compétences",
-          "nav.hobbies": "Loisirs",
-          "nav.contact": "Contact",
-          "section.projects": "Projets",
-          "section.skills": "Compétences",
-          "section.hobbies": "Loisirs",
-          "section.contact": "Contact",
-          "carousel.caption.cooking": "Cuisine",
-          "carousel.caption.drums": "Batterie",
-          "carousel.caption.hiking": "Randonnée",
-          "carousel.caption.running": "Course",
-          "form.firstname": "Prénom",
-          "form.lastname": "Nom",
-          "form.email": "E-mail",
-          "form.subject": "Objet",
-          "form.message": "Votre message",
-          "form.send": "Envoyer",
-          "form.copyEmail": "Copier l'e-mail",
-          "form.tip": "Si votre application e-mail ne s'ouvre pas, copiez mon adresse et écrivez-moi directement.",
-          "form.status.sent": "Ouverture de votre application e-mail. Sinon, écrivez à anatoliy.lavrentiev1@gmail.com.",
-          "form.status.copied": "E-mail copié : anatoliy.lavrentiev1@gmail.com",
-          "form.status.copyFailed": "Copie automatique impossible. E-mail : anatoliy.lavrentiev1@gmail.com",
-          "button.cv": "téléchargerCV();"
-        }
-      };
-
-      let currentLang = localStorage.getItem('lang') || 'en';
-
-
-      let line = 0, char = 0;
-      let text = translations[currentLang]["typed.greeting"][0].split(" > ");
-      let typingTimeoutId = null;
-      let typingSessionId = 0;
-
-      function type(sessionId) {
-        if (sessionId !== typingSessionId) return;
-        if (line < text.length) {
-          if (char < text[line].length) {
-            typedText.innerHTML += text[line].charAt(char);
-            char++;
-            typingTimeoutId = setTimeout(() => type(sessionId), 100);
-          } else {
-            typedText.innerHTML += "<br>";
-            line++;
-            char = 0;
-            typingTimeoutId = setTimeout(() => type(sessionId), 600);
-          }
-        }
-      }
-
-      function startTyping(lang) {
-        if (typingTimeoutId) clearTimeout(typingTimeoutId);
-        typingSessionId += 1;
-        const sessionId = typingSessionId;
-        text = translations[lang]["typed.greeting"][0].split(" > ");
-        typedText.style.transition = "opacity 0.3s ease";
-        typedText.style.opacity = 0;
-        typingTimeoutId = setTimeout(() => {
-          if (sessionId !== typingSessionId) return;
-          typedText.innerHTML = "";
-          line = 0;
-          char = 0;
-          typedText.style.opacity = 1;
-          type(sessionId);
-        }, 300);
-      }
-
-      const scrollBtn = document.getElementById("scrollTopBtn");
-      window.onscroll = function () {
-        scrollBtn.style.display = (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) ? "flex" : "none";
-      };
-      scrollBtn.addEventListener("click", () => {
-        window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
-      });
-
-
-      const form = document.getElementById('contactForm');
-      const contactStatus = document.getElementById('contactStatus');
-      const copyEmailBtn = document.getElementById('copyEmailBtn');
-      const contactEmail = 'anatoliy.lavrentiev1@gmail.com';
-
-      function tr(key) {
-        return translations[currentLang][key] || key;
-      }
-
-      async function copyEmailToClipboard() {
-        if (navigator.clipboard && window.isSecureContext) {
-          await navigator.clipboard.writeText(contactEmail);
-          return;
-        }
-        const temp = document.createElement('textarea');
-        temp.value = contactEmail;
-        temp.setAttribute('readonly', '');
-        temp.style.position = 'absolute';
-        temp.style.left = '-9999px';
-        document.body.appendChild(temp);
-        temp.select();
-        document.execCommand('copy');
-        document.body.removeChild(temp);
-      }
-
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        const firstName = document.getElementById('firstname').value.trim();
-        const lastName = document.getElementById('lastname').value.trim();
-        const email = document.getElementById('email').value;
-        const subjectInput = document.getElementById('subject').value.trim();
-        const message = document.getElementById('message').value;
-        const fullName = `${firstName} ${lastName}`.trim();
-        const subject = subjectInput || `Portfolio message from ${fullName}`;
-        const body = `${message}\n\nFrom: ${fullName} <${email}>`;
-        const mailtoLink = `mailto:${contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-        window.location.href = mailtoLink;
-        contactStatus.textContent = tr("form.status.sent");
-        form.reset();
-      });
-
-      copyEmailBtn.addEventListener('click', async () => {
-        try {
-          await copyEmailToClipboard();
-          contactStatus.textContent = tr("form.status.copied");
-        } catch (err) {
-          contactStatus.textContent = tr("form.status.copyFailed");
-        }
-      });
-
-
-      const faders = document.querySelectorAll('.ide-card, .skill, .project, footer, .section-spacing h2');
-      if (!prefersReducedMotion) {
-        const observer = new IntersectionObserver(entries => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) entry.target.classList.add('visible');
-          });
-        }, { threshold: 0.2 });
-        faders.forEach(el => {
-          el.classList.add('fade-in');
-          observer.observe(el);
-        });
-      } else {
-        faders.forEach(el => el.classList.add('visible'));
-      }
-
-
-      const canvas = document.getElementById('grid-bg');
-      const ctx = canvas.getContext('2d');
-      let w, h, t = 0;
-
-      function resize() {
-        w = canvas.width = window.innerWidth;
-        h = canvas.height = window.innerHeight;
-      }
-      window.addEventListener('resize', resize);
-      resize();
-
-      function draw() {
-        ctx.clearRect(0, 0, w, h);
-        ctx.strokeStyle = 'rgba(0,255,157,0.15)';
-        ctx.lineWidth = 1;
-        const gridSize = 40;
-        for (let x = -w; x < w * 2; x += gridSize) {
-          const offsetY = Math.sin((x + t) * 0.005) * 10;
-          ctx.beginPath();
-          ctx.moveTo(x - (t % gridSize), 0);
-          ctx.lineTo(x - (t % gridSize), h);
-          ctx.stroke();
-          ctx.beginPath();
-          ctx.moveTo(0, x + offsetY);
-          ctx.lineTo(w, x + offsetY);
-          ctx.stroke();
-        }
-        t += 0.5;
-        requestAnimationFrame(draw);
-      }
-      if (!prefersReducedMotion) draw();
-
-      canvas.style.position = 'fixed';
-      canvas.style.top = 0;
-      canvas.style.left = 0;
-      canvas.style.zIndex = 0;
-      canvas.style.width = '100%';
-      canvas.style.height = '100%';
-      canvas.style.pointerEvents = 'none';
-
-
-      const burger = document.getElementById('burger');
-      const nav = document.querySelector('.nav-links');
-      burger.addEventListener('click', () => {
-        const isOpen = burger.classList.toggle('active');
-        nav.classList.toggle('open', isOpen);
-        burger.setAttribute('aria-expanded', String(isOpen));
-      });
-      document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-          burger.classList.remove('active');
-          nav.classList.remove('open');
-          burger.setAttribute('aria-expanded', 'false');
-        });
-      });
-      document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape') {
-          burger.classList.remove('active');
-          nav.classList.remove('open');
-          burger.setAttribute('aria-expanded', 'false');
-        }
-      });
-
-      const themeToggle = document.getElementById('themeToggle');
-      const themeIcon = themeToggle.querySelector('i');
-      if (localStorage.getItem('theme') === 'light') {
-        document.body.classList.add('light-theme');
-        themeIcon.classList.replace('fa-sun', 'fa-moon');
-      }
-      themeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('light-theme');
-        const isLight = document.body.classList.contains('light-theme');
-        themeIcon.classList.replace(isLight ? 'fa-sun' : 'fa-moon', isLight ? 'fa-moon' : 'fa-sun');
-        localStorage.setItem('theme', isLight ? 'light' : 'dark');
-      });
-
-
-      const langBtn = document.getElementById("langToggle");
-      const langIcon = langBtn.querySelector("i");
-
-      function setLanguage(lang) {
-        document.documentElement.lang = lang;
-        document.querySelectorAll("[data-i18n]").forEach(el => {
-          const key = el.getAttribute("data-i18n");
-          const translation = translations[lang][key];
-          if (translation) {
-            el.style.transition = "opacity 0.2s ease";
-            el.style.opacity = 0;
-            setTimeout(() => {
-              el.innerHTML = translation;
-              el.style.opacity = 1;
-            }, 200);
-          }
-        });
-
-        document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
-          const key = el.getAttribute("data-i18n-placeholder");
-          const translation = translations[lang][key];
-          if (translation) {
-            el.style.transition = "opacity 0.2s ease";
-            el.style.opacity = 0;
-            setTimeout(() => {
-              el.setAttribute("placeholder", translation);
-              el.style.opacity = 1;
-            }, 200);
-          }
-        });
-
-        if (lang === "fr") {
-          langIcon.className = "fa-solid fa-globe-europe";
-          langBtn.title = "Passer en anglais";
-        } else {
-          langIcon.className = "fa-solid fa-globe";
-          langBtn.title = "Switch to French";
-        }
-
-        startTyping(lang);
-        localStorage.setItem('lang', lang);
-      }
-
-      setLanguage(currentLang);
-
-      langBtn.addEventListener("click", () => {
-        currentLang = currentLang === "en" ? "fr" : "en";
-        setLanguage(currentLang);
-      });
-
-
-
-    });
-  </script>
+  <script defer src="script.js"></script>
 
 
 </body>

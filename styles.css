@@ -704,141 +704,77 @@ header nav a {
   transform: translateY(0);
 }
 
-.carousel-container {
-  position: relative;
-  width: 100%;
+/* Personal interests, presented without photographs. */
+.hobbies-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
   max-width: 1000px;
-  margin: 4rem auto;
-  overflow: hidden;
-  border-radius: 12px;
-  background: var(--color-card);
-  border: 2px solid var(--color-accent);
-  box-shadow: 0 0 15px rgba(0, 255, 157, 0.5);
+  margin: 3rem auto 0;
+  padding: 0 20px;
 }
 
-.carousel-wrapper {
-  width: 100%;
-  overflow: hidden;
-  border-radius: 12px;
-}
-
-.carousel-track {
-  display: flex;
-  transition: transform 0.6s ease-in-out;
-}
-
-.carousel-slide {
-  min-width: 100%;
-  height: 500px;
+.hobby-card {
   position: relative;
-}
-
-.carousel-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.9) contrast(1.1) saturate(1.2);
-  transition: transform 0.5s ease, filter 0.5s ease;
-}
-
-.carousel-slide:hover img {
-  transform: scale(1.03);
-  filter: brightness(1) contrast(1.2) saturate(1.3);
-}
-
-.carousel-slide::after {
-  content: '';
-  position: absolute;
-  inset: auto 0 0 0;
-  height: 40%;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
-  pointer-events: none;
-}
-
-.carousel-caption {
-  position: absolute;
-  left: 16px;
-  bottom: 14px;
-  z-index: 3;
-  margin: 0;
-  padding: 6px 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(0, 255, 157, 0.35);
-  background: rgba(0, 0, 0, 0.45);
-  color: #d9ffef;
-  font-size: 0.9rem;
-  text-shadow: 0 0 8px rgba(0, 255, 157, 0.45);
-}
-
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 56px;
-  height: 56px;
-  display: inline-flex;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0;
-  border-radius: 50%;
-  border: none;
-  background: none;
+  min-height: 220px;
+  padding: 24px 16px;
+  border: 1px solid var(--color-accent);
+  border-radius: 12px;
+  background: var(--color-card);
   color: var(--color-accent);
-  font-size: 2.5rem;
-  cursor: pointer;
-  z-index: 5;
-  text-shadow: 0 0 10px var(--color-accent), 0 0 20px var(--color-accent), 0 0 30px var(--color-accent);
-  box-shadow: none;
-  transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
+  transition: transform var(--transition), box-shadow var(--transition);
 }
 
-.carousel-btn:hover {
-  color: #00bfff;
-  transform: translateY(-50%) scale(1.2);
-  text-shadow: 0 0 15px #00bfff, 0 0 30px #00bfff;
+.hobby-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--glow);
 }
 
-.carousel-btn.prev {
-  left: 20px;
-}
-
-.carousel-btn.next {
-  right: 20px;
-}
-
-.carousel-dots {
+.hobby-index {
   position: absolute;
-  left: 50%;
-  bottom: 14px;
-  transform: translateX(-50%);
-  z-index: 6;
-  display: flex;
-  gap: 8px;
+  top: 14px;
+  left: 16px;
+  font-size: 0.75rem;
+  opacity: 0.65;
 }
 
-.carousel-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  border: 1px solid rgba(0, 255, 157, 0.6);
-  background: rgba(0, 0, 0, 0.55);
-  cursor: pointer;
-  padding: 0;
-  transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+.hobby-icon {
+  width: 80px;
+  height: 80px;
+  margin: 16px 0;
 }
 
-.carousel-dot.active {
-  background: var(--color-accent);
-  box-shadow: 0 0 12px rgba(0, 255, 157, 0.75);
-  transform: scale(1.2);
+.hobby-card h3 {
+  margin: 12px 0 0;
+  font: inherit;
+  color: var(--color-text);
 }
 
-.carousel-dot:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 2px rgba(0, 255, 157, 0.35);
+.profile-avatar {
+  width: 100%;
+  aspect-ratio: 1;
+  border: 2px solid var(--color-accent);
+  box-shadow: var(--glow);
+  background: #10251f;
+}
+
+@media (max-width: 800px) {
+  .hobbies-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 400px) {
+  .hobbies-grid { gap: 12px; padding-inline: 12px; }
+  .hobby-card { min-height: 180px; padding-inline: 8px; }
+  .hobby-icon { width: 64px; height: 64px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hobby-card { transition: none; }
+  .hobby-card:hover { transform: none; }
 }
 
 #scrollTopBtn {
@@ -870,28 +806,6 @@ header nav a {
 .nav-links a:focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 4px;
-}
-
-.carousel-btn:focus,
-.carousel-btn:focus-visible,
-.carousel-btn:active {
-  outline: none !important;
-  box-shadow: none !important;
-  border-color: transparent !important;
-  background: transparent !important;
-  text-shadow: 0 0 10px var(--color-accent), 0 0 20px var(--color-accent), 0 0 30px var(--color-accent);
-}
-
-.carousel-btn::-moz-focus-inner {
-  border: 0;
-}
-
-.carousel-btn::-moz-focus-outer {
-  border: 0;
-}
-
-.carousel-btn {
-  -webkit-tap-highlight-color: transparent;
 }
 
 .section-spacing {
@@ -1078,33 +992,10 @@ footer .neon-btn {
     font-size: 1rem;
   }
 
-  .carousel-slide {
-    height: 220px;
-  }
 
-  .carousel-caption {
-    left: 10px;
-    bottom: 10px;
-    font-size: 0.8rem;
-    padding: 4px 9px;
-  }
 
-  .carousel-btn {
-    font-size: 1.5rem;
-    width: 44px;
-    height: 44px;
-    padding: 0;
-  }
 
-  .carousel-dots {
-    bottom: 8px;
-    gap: 6px;
-  }
 
-  .carousel-dot {
-    width: 8px;
-    height: 8px;
-  }
 
   footer .neon-btn {
     font-size: 0.9rem;
@@ -1196,20 +1087,8 @@ footer .neon-btn {
     font-size: 1.05rem;
   }
 
-  .carousel-slide {
-    height: 300px;
-  }
 
-  .carousel-caption {
-    font-size: 0.85rem;
-  }
 
-  .carousel-btn {
-    font-size: 1.8rem;
-    width: 50px;
-    height: 50px;
-    padding: 0;
-  }
 
   footer .neon-btn {
     font-size: 0.95rem;
